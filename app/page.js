@@ -156,8 +156,8 @@ export default function HomePage() {
 
       <HeroSection />
       {/* ================= STATS ================= */}
-      <section className="py-15">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+      <section className="py-15 bg-[#1e1e1e]">
+        <div className="max-w-7xl bg-[#1e1e1e] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
           {[
             ["20+", "Years Experience"],
             ["EdTech", "Industry"],
@@ -171,7 +171,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <h3 className="text-4xl font-bold text-[#b79662]">{num}</h3>
+              <h3 className="text-3xl font-bold text-[#b79662]">{num}</h3>
               <p className="mt-2 text-[#cfcfcf]">{label}</p>
             </motion.div>
           ))}
@@ -186,7 +186,7 @@ export default function HomePage() {
       whileInView="show"
       viewport={{ once: true }}
       variants={fade}
-      className="text-4xl md:text-5xl font-bold text-center mb-20 text-[#141414]"
+      className="text-4xl md:text-5xl font-bold text-center mb-15 text-[#4c4949]"
     >
       What <span className="text-[#b79662]">I Do Best</span>
             <div className="w-20 h-1 bg-[#b79662] mx-auto mt-4" />
@@ -221,7 +221,7 @@ export default function HomePage() {
 
 
      {/* ================= TRUSTED BY ================= */}
-<section className="py-20 border-y border-white/5 bg-black/40 backdrop-blur-sm">
+<section className="py-20 border-y border-white/5 bg-[#1e1e1e] backdrop-blur-sm">
   <div className="max-w-7xl mx-auto px-6">
     <motion.p 
       initial={{ opacity: 0 }}
@@ -231,7 +231,7 @@ export default function HomePage() {
       Strategic Leadership & Partnerships
     </motion.p>
     
-    <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
       {["IIT PATNA", "EDTECH CORP", "REALTY GROUP", "VENTURE HUB"].map((brand, i) => (
         <motion.span
           key={i}
@@ -248,57 +248,7 @@ export default function HomePage() {
   </div>
 </section>
 
-<section className="py-20 bg-[#ffffff] relative overflow-hidden">
-  {/* Subtle Background Glow */}
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#b79662]/5 blur-[120px] rounded-full" />
-
-  <div className="relative max-w-7xl mx-auto px-6">
-    <motion.div 
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="mb-20 text-center"
-    >
-      <h2 className="text-4xl md:text-5xl text-black font-bold mb-4">
-        The <span className="text-[#b79662]">Scaling Blueprint</span>
-      </h2>
-      <div className="w-20 h-1 bg-[#b79662] mx-auto mt-4" />
-    </motion.div>
-
-    <div className="grid lg:grid-cols-3 bg-[#0f0f0f] gap-0">
-      {[
-        { step: "01", title: "Strategic Audit", desc: "Granular analysis of sales funnels and operational leakage to find hidden ROI." },
-        { step: "02", title: "Cultural Alignment", desc: "Instilling a high-stakes, performance-driven mindset across the organization." },
-        { step: "03", title: "Rapid Scale", desc: "Deploying automated systems and training engines for pan-India expansion." },
-      ].map((item, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: idx * 0.2 }}
-          whileHover={{ backgroundColor: "rgba(183, 150, 98, 0.03)" }}
-          className="relative p-12 border border-white/5 hover:border-[#b79662]/30 transition-all duration-500 group"
-        >
-          <div className="text-sm font-mono text-[#b79662] mb-6 block tracking-widest">{item.step} —</div>
-          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-[#b79662] transition-colors">
-            {item.title}
-          </h3>
-          <p className="text-[#cfcfcf] leading-relaxed font-light">
-            {item.desc}
-          </p>
-          
-          {/* Animated Line on Hover */}
-          <motion.div 
-            className="absolute bottom-0 left-0 h-[2px] bg-[#b79662] w-0 group-hover:w-full transition-all duration-500"
-          />
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
-
-<section className="py-20 bg-[#0f0f0f] relative overflow-hidden">
+<section className="py-20 bg-[#1e1e1e] relative overflow-hidden">
       {/* Background Decorative Text */}
       <div className="absolute top-10 right-[-5%] text-[15rem] font-black text-white/[0.02] select-none leading-none">
         STRATEGY
@@ -316,8 +266,8 @@ export default function HomePage() {
             className="relative"
           >
             {/* The Gold Frame Accent */}
-            <div className="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-[#b79662]" />
-            
+{/* The Gold Frame Accent */}
+<div className="absolute -top-4 -left-3 md:-top-6 md:-left-6 w-24 h-24 md:w-32 md:h-32 border-t-2 border-l-2 border-[#b79662] z-10" />            
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <Image 
                 src="/001.png" // Use the same top-aligned professional image
@@ -386,6 +336,58 @@ export default function HomePage() {
       </div>
     </section> 
 
+<section className="py-20 bg-[#ffffff] relative overflow-hidden">
+  {/* Subtle Background Glow */}
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#b79662]/5 blur-[120px] rounded-full" />
+
+  <div className="relative max-w-7xl mx-auto px-6">
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="mb-15 text-center"
+    >
+      <h2 className="text-4xl md:text-5xl text-[#4c4949] font-bold mb-3">
+        Scaling <span className="text-[#b79662]">Blueprint</span>
+      </h2>
+      <div className="w-20 h-1 bg-[#b79662] mx-auto mt-4" />
+    </motion.div>
+
+    <div className="grid lg:grid-cols-3 bg-[#1e1e1e] gap-0">
+      {[
+        { step: "01", title: "Strategic Audit", desc: "Granular analysis of sales funnels and operational leakage to find hidden ROI." },
+        { step: "02", title: "Cultural Alignment", desc: "Instilling a high-stakes, performance-driven mindset across the organization." },
+        { step: "03", title: "Rapid Scale", desc: "Deploying automated systems and training engines for pan-India expansion." },
+      ].map((item, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: idx * 0.2 }}
+          whileHover={{ backgroundColor: "rgba(183, 150, 98, 0.03)" }}
+          className="relative p-12 border border-white/5 hover:border-[#b79662]/30 transition-all duration-500 group"
+        >
+          <div className="text-sm font-mono text-[#b79662] mb-6 block tracking-widest">{item.step} —</div>
+          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-[#b79662] transition-colors">
+            {item.title}
+          </h3>
+          <p className="text-[#cfcfcf] leading-relaxed font-light">
+            {item.desc}
+          </p>
+          
+          {/* Animated Line on Hover */}
+          <motion.div 
+            className="absolute bottom-0 left-0 h-[2px] bg-[#b79662] w-0 group-hover:w-full transition-all duration-500"
+          />
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
 {/* ================= METHODOLOGY ================= */}
 
 
@@ -430,7 +432,9 @@ export default function HomePage() {
           <h2 className="text-4xl md:text-5xl font-bold text-[#4c4949] mb-6">
             Strategic <span className="text-[#b79662]">Pillars</span>
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-lg">
+                <div className="w-20 h-1 bg-[#b79662] mx-auto mt-4" />
+
+          <p className="text-gray-500 max-w-2xl mt-4 mx-auto text-lg">
             A methodology refined over two decades of leading market transitions.
           </p>
         </div>
@@ -449,7 +453,7 @@ export default function HomePage() {
                 scale: 1.02, // Subtle zoom
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
-              className="group relative p-10 bg-[#111] border border-white/5 rounded-3xl hover:border-[#b79662]/50 transition-all duration-500 shadow-xl hover:shadow-[0_20px_40px_rgba(183,150,98,0.15)]"
+              className="group relative p-10 bg-[#1e1e1e] border border-white/5 rounded-3xl hover:border-[#b79662]/50 transition-all duration-500 shadow-xl hover:shadow-[0_20px_40px_rgba(183,150,98,0.15)]"
             >
               {/* Radial glow that follows the lift */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#b79662]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
@@ -491,7 +495,7 @@ export default function HomePage() {
 
 
 
-    <section className="py-20 bg-[#0f0f0f] relative overflow-hidden">
+    <section className="py-20 bg-[#1e1e1e] relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Header */}
@@ -501,6 +505,8 @@ export default function HomePage() {
             Two Decades of <br />
             <span className="text-[#b79662]">Operational Excellence</span>
           </h2>
+                          <div className="w-20 h-1 bg-[#b79662] mt-6" />
+
         </div>
 
         <div className="relative">
@@ -563,7 +569,7 @@ export default function HomePage() {
       </div>
     </section>
  
- <section className="py-20 bg-white text-[#0f0f0f]">
+ <section className="py-20 bg-white text-[#4c4949]">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header with high contrast */}
@@ -574,6 +580,8 @@ export default function HomePage() {
               Transforming <br /> 
               <span className="text-[#b79662]">Vision into Reality.</span>
             </h2>
+             <div className="w-20 h-1 bg-[#b79662] mt-6" />
+
           </div>
           <div className="pb-2">
             <p className="text-gray-500 max-w-xs text-sm border-l-2 border-[#b79662] pl-6 italic">
@@ -601,7 +609,7 @@ export default function HomePage() {
               </div>
 
               {/* Floating Content Box */}
-              <div className="absolute -bottom-6 left-6 right-6 bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+              <div className="absolute -bottom-6 left-6 right-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100">
                 <span className="text-[#b79662] text-[10px] font-black uppercase tracking-[0.2em]">
                   {item.category}
                 </span>
@@ -662,7 +670,7 @@ function Feature({ icon: Icon, title, children }) {
         y: -10,
         transition: { duration: 0.3 } 
       }}
-      className="bg-[#141414] border border-white/5 rounded-2xl p-8 hover:border-[#b79662] transition-all duration-300 shadow-2xl shadow-black/30 group"
+      className="bg-[#1e1e1e] border border-white/5 rounded-2xl p-8 hover:border-[#b79662] transition-all duration-300 shadow-2xl shadow-black/30 group"
     >
       {/* ICON CONTAINER 
           - Default: bg is gold with 10% opacity

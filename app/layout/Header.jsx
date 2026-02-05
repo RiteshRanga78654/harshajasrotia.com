@@ -8,8 +8,8 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 backdrop-blur-2xl left-0 w-full z-50">
-      <div className="mx-auto max-w-7xl px-4 md:px-8">
-        <div className="mt-4 rounded-2xl bg-[#1e1e1e]/80 backdrop-blur-xl border border-[#4c4949] shadow-lg">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-8">
+        <div className="mt-3 mb-3 rounded-2xl bg-[#1e1e1e]/80 backdrop-blur-xl border border-[#4c4949] shadow-lg">
           <div className="flex items-center justify-between h-16 px-6">
 
             {/* Brand */}
@@ -23,7 +23,7 @@ export default function Header() {
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-10">
               <NavItem href="/" label="Home" />
-              <NavItem href="/journey" label="The Journey" />
+              <NavItem href="/the-journey" label="The Journey" />
               <NavItem href="/strategic-insights" label="Strategic Insights" />
               <NavItem href="/events-speaking" label="Events & Speaking" />
               <NavItem href="/media-gallery" label="Media & Gallery" />

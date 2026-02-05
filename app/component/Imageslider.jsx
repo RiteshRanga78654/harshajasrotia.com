@@ -9,6 +9,9 @@ const originalImages = [
   { src: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "Real Estate Training" },
   { src: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "EdTech Innovation" },
   { src: "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "Operational Scale" },
+  { src: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "Real Estate Training" },
+  { src: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "EdTech Innovation" },
+  { src: "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "Operational Scale" },
 ];
 
 const images = [...originalImages, ...originalImages, ...originalImages];
@@ -61,13 +64,13 @@ export default function ImageSlider() {
 
   useEffect(() => {
     if (!isPaused) {
-      const interval = setInterval(nextStep, 2500);
+      const interval = setInterval(nextStep, 1500);
       return () => clearInterval(interval);
     }
   }, [nextStep, isPaused]);
 
   return (
-    <section className="py-16 md:py-20 bg-[#0f0f0f] overflow-hidden">
+    <section className="py-16 md:py-20 bg-[#1e1e1e] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-8 md:mb-12 flex justify-between items-center">
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
@@ -75,7 +78,7 @@ export default function ImageSlider() {
           className="text-2xl md:text-5xl font-bold text-white uppercase tracking-tighter"
         >
           Moments of <span className="text-[#b79662]">Impact</span>
-                    <div className="w-20 h-1 bg-[#b79662] mx-auto mt-4" />
+                    <div className="w-20 h-1 bg-[#b79662] md:mx-auto mt-4" />
 
         </motion.h2>
 

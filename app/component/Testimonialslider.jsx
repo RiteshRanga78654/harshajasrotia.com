@@ -102,7 +102,7 @@ const TestimonialSlider = () => {
         {/* Header with Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 border-b border-gray-100 pb-8">
           <div className="space-y-2">
-            <p className="text-[#dc2626] font-bold text-xs tracking-[0.4em] ">Testimonials</p>
+            <p className="text-[#dc2626] font-bold text-xl tracking-[0.4em] ">Testimonials</p>
             <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter">
               Voices of <span className="text-[#dc2626]">Impact.</span>
             </h2>
@@ -111,15 +111,15 @@ const TestimonialSlider = () => {
           <div className="flex gap-4">
             <button 
               onClick={prevSlide}
-              className="w-14 h-14 border border-gray-200 flex items-center justify-center hover:bg-[#dc2626] group transition-all rounded-full"
+            className="p-3 md:p-4 rounded-full border border-[#cc0000] text-[#cc0000] hover:bg-[#cc0000] hover:text-white transition-all active:scale-90"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
+              <ChevronLeft className="w-6 h-6 transition-colors" />
             </button>
             <button 
               onClick={nextSlide}
-              className="w-14 h-14 border border-gray-200 flex items-center justify-center hover:bg-[#dc2626] group transition-all rounded-full"
+            className="p-3 md:p-4 rounded-full border border-[#cc0000] text-[#cc0000] hover:bg-[#cc0000] hover:text-white transition-all active:scale-90"
             >
-              <ChevronRight className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
+              <ChevronRight className="w-6 h-6 transition-colors" />
             </button>
           </div>
         </div>
@@ -143,7 +143,7 @@ const TestimonialSlider = () => {
                 className="flex-shrink-0 px-4"
                 style={{ width: `${100 / itemsPerPage}%` }}
               >
-                <div className="bg-[#b3b3b3] p-8 md:p-12 rounded-[2.5rem] border border-white/5 h-full flex flex-col relative group hover:border-[#dc2626]/30 transition-all duration-500 shadow-2xl">
+                <div className="bg-[#b3b3b3] p-8 md:p-12 rounded-[2.5rem] border-3 border-[#cc0000]/5 h-full flex flex-col relative group hover:border-[#cc0000]/30 transition-all duration-500 shadow-2xl">
                   
                   <Quote className="absolute top-8 right-8 w-12 h-12 text-[#f4f4f4] group-hover:text-[#dc2626]/20 transition-colors" />
 
@@ -153,7 +153,7 @@ const TestimonialSlider = () => {
                     </p>
                     
                     <div className="flex items-center gap-5 mt-auto">
-                      <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-[#dc2626]/20 group-hover:border-[#dc2626] transition-all">
+                      <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-[#cc0000]/20 group-hover:border-[#cc0000] transition-all">
                         <img 
                           src={item.image} 
                           alt={item.name} 

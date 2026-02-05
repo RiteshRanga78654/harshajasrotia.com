@@ -11,16 +11,16 @@ const HeroSection = () => {
       }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/65"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
 
       {/* Gold Gradient Accent */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#cc0000]/20 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#b79662]/20 via-transparent to-transparent"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
         <div className="max-w-3xl">
           
           {/* Subtitle */}
-          <p className="uppercase tracking-widest text-xs text-[#cc0000] mb-5">
+          <p className=" tracking-widest text-xl text-[#cc0000] mb-5">
             COO · IIT Patna · Real Estate Trainer
           </p>
 
@@ -32,7 +32,7 @@ const HeroSection = () => {
           </h1>
 
           {/* Description */}
-          <p className="mt-6 text-lg text-[#d1d1d1] leading-relaxed">
+          <p className="mt-6 text-lg text-[#f4f4f4] leading-relaxed">
             Harsha Jasrotia is a Sales & Marketing leader with 20+ years of
             experience across EdTech and Real Estate, helping organizations
             build scalable revenue systems and high-performance teams.

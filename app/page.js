@@ -11,7 +11,8 @@ import {
   FaBuilding,
 } from "react-icons/fa";
 import HeroSection from "./component/HeroSection";
-import Imageslider from "./component/Imageslider"
+import Imageslider from "./component/Imageslider";
+import Testimonialslider from "./component/Testimonialslider"
 import Footer from "./layout/Footer";
 import { FaShieldAlt, FaRocket, FaGlobe } from "react-icons/fa";
 
@@ -93,7 +94,7 @@ export default function HomePage() {
     <main className="bg-[#0f0f0f] text-white overflow-hidden">
       {/* ================= HERO ================= */}
       {/* <section className="relative min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#b79662]/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#cc0000]/20 to-transparent" />
 
         <div className="relative max-w-[1400px] mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           
@@ -104,14 +105,14 @@ export default function HomePage() {
             variants={fade}
             transition={{ duration: 0.9 }}
           >
-            <p className="uppercase tracking-[0.35em] text-xs text-[#b79662] mb-6">
+            <p className=" tracking-[0.35em] text-xs text-[#cc0000] mb-6">
               COO · IIT Patna · Real Estate Trainer
             </p>
 
             <h1 className="text-[44px] md:text-[70px] leading-[1.05] font-bold">
               Modern Leadership
               <br />
-              <span className="text-[#b79662]">That Scales Businesses</span>
+              <span className="text-[#cc0000]">That Scales Businesses</span>
             </h1>
 
             <p className="mt-8 text-lg text-[#cfcfcf] max-w-xl">
@@ -122,13 +123,13 @@ export default function HomePage() {
             <div className="mt-12 flex gap-6">
               <Link
                 href="/contact"
-                className="rounded-full bg-[#b79662] px-8 py-3 text-black font-semibold hover:scale-105 transition"
+                className="rounded-full bg-[#cc0000] px-8 py-3 text-black font-semibold hover:scale-105 transition"
               >
                 Let’s Connect
               </Link>
               <Link
                 href="/journey"
-                className="text-[#cfcfcf] hover:text-[#b79662] transition"
+                className="text-[#cfcfcf] hover:text-[#cc0000] transition"
               >
                 View Journey →
               </Link>
@@ -171,13 +172,14 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <h3 className="text-3xl font-bold text-[#b79662]">{num}</h3>
+              <h3 className="text-3xl font-bold text-[#cc0000]">{num}</h3>
               <p className="mt-2 text-[#cfcfcf]">{label}</p>
             </motion.div>
           ))}
         </div>
       </section>
-      {/* ================= ICON SKILLS ================= */}
+      <Testimonialslider/>
+      
      {/* ================= ICON SKILLS (WHITE BG VERSION) ================= */}
 <section className="py-20 bg-white"> 
   <div className="max-w-7xl mx-auto px-6">
@@ -188,8 +190,8 @@ export default function HomePage() {
       variants={fade}
       className="text-4xl md:text-5xl font-bold text-center mb-15 text-[#4c4949]"
     >
-      What <span className="text-[#b79662]">I Do Best</span>
-            <div className="w-20 h-1 bg-[#b79662] mx-auto mt-4" />
+      What <span className="text-[#cc0000]">I Do Best</span>
+            <div className="w-20 h-1 bg-[#cc0000] mx-auto mt-4" />
 
     </motion.h2>
     
@@ -218,15 +220,13 @@ export default function HomePage() {
   </div>
 </section>
 
-
-
      {/* ================= TRUSTED BY ================= */}
 <section className="py-20 border-y border-white/5 bg-[#1e1e1e] backdrop-blur-sm">
   <div className="max-w-7xl mx-auto px-6">
     <motion.p 
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      className="text-center text-xs uppercase tracking-[0.5em] text-[#b79662] mb-12 font-semibold"
+      className="text-center text-xs  tracking-[0.5em] text-[#cc0000] mb-12 font-semibold"
     >
       Strategic Leadership & Partnerships
     </motion.p>
@@ -267,7 +267,7 @@ export default function HomePage() {
           >
             {/* The Gold Frame Accent */}
 {/* The Gold Frame Accent */}
-<div className="absolute -top-4 -left-3 md:-top-6 md:-left-6 w-24 h-24 md:w-32 md:h-32 border-t-2 border-l-2 border-[#b79662] z-10" />            
+<div className="absolute -top-4 -left-3 md:-top-6 md:-left-6 w-24 h-24 md:w-32 md:h-32 border-t-2 border-l-2 border-[#cc0000] z-10" />            
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <Image 
                 src="/001.png" // Use the same top-aligned professional image
@@ -278,9 +278,9 @@ export default function HomePage() {
             </div>
 
             {/* Floating Experience Badge */}
-            <div className="absolute -bottom-10 -right-10 bg-[#b79662] p-8 rounded-2xl hidden md:block shadow-2xl">
+            <div className="absolute -bottom-10 -right-10 bg-[#cc0000] p-8 rounded-2xl hidden md:block shadow-2xl">
               <p className="text-black font-black text-4xl tracking-tighter">20+</p>
-              <p className="text-black text-[10px] font-bold uppercase tracking-widest leading-none">
+              <p className="text-black text-[10px] font-bold  tracking-widest leading-none">
                 Years of <br /> Excellence
               </p>
             </div>
@@ -293,11 +293,11 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <p className="text-[#b79662] font-mono text-sm tracking-[0.4em] mb-6">
+            <p className="text-[#cc0000] font-mono text-sm tracking-[0.4em] mb-6">
               THE VISIONARY BEHIND THE SCALE
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-[1.1]">
-              Architecting <span className="text-[#b79662]">Growth</span> <br /> 
+              Architecting <span className="text-[#cc0000]">Growth</span> <br /> 
               Through Logical Precision.
             </h2>
             
@@ -305,7 +305,7 @@ export default function HomePage() {
               <p>
                 With over two decades of experience, Harsha Jasrotia stands at the intersection of 
                 <strong> analytical engineering</strong> and <strong>high-stakes business execution</strong>. 
-                As an alumnus of <span className="text-white border-b border-[#b79662]">IIT Patna</span>, his 
+                As an alumnus of <span className="text-white border-b border-[#cc0000]">IIT Patna</span>, his 
                 approach to leadership is rooted in a fundamental belief: business problems are engineering problems 
                 waiting for a logical solution.
               </p>
@@ -322,10 +322,10 @@ export default function HomePage() {
 
             {/* Signature / Designation */}
             <div className="mt-12 pt-8 border-t border-white/10 flex items-center gap-6">
-               <div className="h-12 w-[1px] bg-[#b79662]" />
+               <div className="h-12 w-[1px] bg-[#cc0000]" />
                <div>
-                 <p className="text-white font-bold text-xl uppercase tracking-tighter">Harsha Jasrotia</p>
-                 <p className="text-[#b79662] text-xs font-mono uppercase tracking-widest mt-1">
+                 <p className="text-white font-bold text-xl  tracking-tighter">Harsha Jasrotia</p>
+                 <p className="text-[#cc0000] text-xs font-mono  tracking-widest mt-1">
                    COO · IIT Patna Alum · Strategic Advisor
                  </p>
                </div>
@@ -338,7 +338,7 @@ export default function HomePage() {
 
 <section className="py-20 bg-[#ffffff] relative overflow-hidden">
   {/* Subtle Background Glow */}
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#b79662]/5 blur-[120px] rounded-full" />
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#cc0000]/5 blur-[120px] rounded-full" />
 
   <div className="relative max-w-7xl mx-auto px-6">
     <motion.div 
@@ -348,9 +348,9 @@ export default function HomePage() {
       className="mb-15 text-center"
     >
       <h2 className="text-4xl md:text-5xl text-[#4c4949] font-bold mb-3">
-        Scaling <span className="text-[#b79662]">Blueprint</span>
+        Scaling <span className="text-[#cc0000]">Blueprint</span>
       </h2>
-      <div className="w-20 h-1 bg-[#b79662] mx-auto mt-4" />
+      <div className="w-20 h-1 bg-[#cc0000] mx-auto mt-4" />
     </motion.div>
 
     <div className="grid lg:grid-cols-3 bg-[#1e1e1e] gap-0">
@@ -366,10 +366,10 @@ export default function HomePage() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: idx * 0.2 }}
           whileHover={{ backgroundColor: "rgba(183, 150, 98, 0.03)" }}
-          className="relative p-12 border border-white/5 hover:border-[#b79662]/30 transition-all duration-500 group"
+          className="relative p-12 border border-white/5 hover:border-[#cc0000]/30 transition-all duration-500 group"
         >
-          <div className="text-sm font-mono text-[#b79662] mb-6 block tracking-widest">{item.step} —</div>
-          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-[#b79662] transition-colors">
+          <div className="text-sm font-mono text-[#cc0000] mb-6 block tracking-widest">{item.step} —</div>
+          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-[#cc0000] transition-colors">
             {item.title}
           </h3>
           <p className="text-[#cfcfcf] leading-relaxed font-light">
@@ -378,7 +378,7 @@ export default function HomePage() {
           
           {/* Animated Line on Hover */}
           <motion.div 
-            className="absolute bottom-0 left-0 h-[2px] bg-[#b79662] w-0 group-hover:w-full transition-all duration-500"
+            className="absolute bottom-0 left-0 h-[2px] bg-[#cc0000] w-0 group-hover:w-full transition-all duration-500"
           />
         </motion.div>
       ))}
@@ -403,7 +403,7 @@ export default function HomePage() {
           className="text-4xl font-bold mb-6"
         >
           Let’s Build Something
-          <span className="text-[#b79662]"> Meaningful</span>
+          <span className="text-[#cc0000]"> Meaningful</span>
         </motion.h2>
 
         <motion.p
@@ -420,7 +420,7 @@ export default function HomePage() {
 
         <Link
           href="/contact"
-          className="inline-block rounded-full bg-[#b79662] px-10 py-3 text-black font-semibold hover:scale-105 transition"
+          className="inline-block rounded-full bg-[#cc0000] px-10 py-3 text-black font-semibold hover:scale-105 transition"
         >
           Contact Me
         </Link>
@@ -430,9 +430,9 @@ export default function HomePage() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-[#4c4949] mb-6">
-            Strategic <span className="text-[#b79662]">Pillars</span>
+            Strategic <span className="text-[#cc0000]">Pillars</span>
           </h2>
-                <div className="w-20 h-1 bg-[#b79662] mx-auto mt-4" />
+                <div className="w-20 h-1 bg-[#cc0000] mx-auto mt-4" />
 
           <p className="text-gray-500 max-w-2xl mt-4 mx-auto text-lg">
             A methodology refined over two decades of leading market transitions.
@@ -453,14 +453,14 @@ export default function HomePage() {
                 scale: 1.02, // Subtle zoom
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
-              className="group relative p-10 bg-[#1e1e1e] border border-white/5 rounded-3xl hover:border-[#b79662]/50 transition-all duration-500 shadow-xl hover:shadow-[0_20px_40px_rgba(183,150,98,0.15)]"
+              className="group relative p-10 bg-[#cc0000] border border-white/5 rounded-3xl hover:border-[#cc0000]/50 transition-all duration-500 shadow-xl hover:shadow-[0_20px_40px_rgba(183,150,98,0.15)]"
             >
               {/* Radial glow that follows the lift */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#b79662]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#cc0000]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
               
               <div className="relative z-10">
                 <motion.p 
-                  className="text-[#b79662] font-mono text-xs uppercase tracking-widest mb-6"
+                  className="text-[#f4f4f4] font-mono text-m  tracking-widest mb-6"
                 >
                   {p.tag}
                 </motion.p>
@@ -473,19 +473,19 @@ export default function HomePage() {
                   whileHover="hover"
                   className="inline-block"
                 >
-                  <p.icon className="text-3xl text-[#b79662] mb-6 transition-transform group-hover:-translate-y-2 duration-300" />
+                  <p.icon className="text-3xl text-[#f4f4f4] mb-6 transition-transform group-hover:-translate-y-2 duration-300" />
                 </motion.div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 transition-colors group-hover:text-[#b79662]">
+                <h3 className="text-2xl font-bold text-white mb-4 transition-colors group-hover:text-[#222222]">
                   {p.title}
                 </h3>
                 
-                <p className="text-[#999] leading-relaxed group-hover:text-[#ccc] transition-colors">
+                <p className="text-white leading-relaxed group-hover:text-white transition-colors">
                   {p.desc}
                 </p>
 
                 {/* --- DECORATIVE LINE --- */}
-                <div className="w-10 h-[1px] bg-[#b79662] mt-6 group-hover:w-full transition-all duration-500" />
+                <div className="w-10 h-[1px] bg-[#cc0000] mt-6 group-hover:w-full transition-all duration-500" />
               </div>
             </motion.div>
           ))}
@@ -495,17 +495,17 @@ export default function HomePage() {
 
 
 
-    <section className="py-20 bg-[#1e1e1e] relative overflow-hidden">
+    <section className="py-20 bg-[#b3b3b3] relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Header */}
         <div className="mb-24">
-          <p className="text-[#b79662] font-mono text-sm tracking-[0.4em] mb-4">MILESTONES</p>
+          <p className="text-[#cc0000] font-mono text-sm tracking-[0.4em] mb-4">MILESTONES</p>
           <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
             Two Decades of <br />
-            <span className="text-[#b79662]">Operational Excellence</span>
+            <span className="text-[#cc0000]">Operational Excellence</span>
           </h2>
-                          <div className="w-20 h-1 bg-[#b79662] mt-6" />
+                          <div className="w-20 h-1 bg-[#cc0000] mt-6" />
 
         </div>
 
@@ -518,7 +518,7 @@ export default function HomePage() {
               whileInView={{ height: "100%" }}
               viewport={{ once: true }}
               transition={{ duration: 2, ease: "easeInOut" }}
-              className="w-full bg-gradient-to-b from-[#b79662] to-transparent origin-top shadow-[0_0_15px_#b79662]"
+              className="w-full bg-gradient-to-b from-[#cc0000] to-transparent origin-top shadow-[0_0_15px_#b79662]"
             />
           </div>
 
@@ -533,33 +533,33 @@ export default function HomePage() {
                 className="relative pl-12 md:pl-32"
               >
                 {/* Connector Dot */}
-                <div className="absolute left-[-5px] md:left-[43px] top-2 w-[11px] h-[11px] bg-[#b79662] rounded-full z-10 shadow-[0_0_10px_#b79662]" />
+                <div className="absolute left-[-5px] md:left-[43px] top-2 w-[11px] h-[11px] bg-[#cc0000] rounded-full z-10 shadow-[0_0_10px_#b79662]" />
 
                 <div className="grid md:grid-cols-[200px_1fr] gap-4 md:gap-20">
                   {/* Year Column */}
                   <div className="relative">
-                    <span className="text-2xl md:text-3xl font-black text-white/20 font-mono tracking-tighter group-hover:text-[#b79662] transition-colors">
+                    <span className="text-2xl md:text-3xl font-black text-white font-mono tracking-tighter group-hover:text-[#cc0000] transition-colors">
                       {step.year.split(' ')[0]}
                     </span>
-                    <p className="text-[#b79662] text-xs font-bold tracking-widest mt-1">
+                    <p className="text-[#cc0000] text-xs font-bold tracking-widest mt-1">
                       {step.year.includes('-') ? step.year.split('-')[1] : ""}
                     </p>
                   </div>
 
                   {/* Content Column */}
                   <div className="max-w-2xl">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight uppercase">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight ">
                       {step.role}
                     </h3>
-                    <p className="text-[#b79662] font-semibold text-sm mb-6 tracking-widest uppercase">
+                    <p className="text-[#cc0000] font-semibold text-sm mb-6 tracking-widest ">
                       {step.company}
                     </p>
-                    <p className="text-[#999] text-lg leading-relaxed font-light">
+                    <p className="text-[#f4f4f4] text-lg leading-relaxed font-light">
                       {step.detail}
                     </p>
                     
                     {/* Visual separation line for mobile */}
-                    <div className="w-12 h-[1px] bg-[#b79662]/30 mt-8 md:hidden" />
+                    <div className="w-12 h-[1px] bg-[#cc0000]/30 mt-8 md:hidden" />
                   </div>
                 </div>
               </motion.div>
@@ -575,16 +575,16 @@ export default function HomePage() {
         {/* Header with high contrast */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-2xl">
-            <p className="text-[#b79662] font-bold tracking-[0.3em] mb-4">SECTOR EXPERTISE</p>
+            <p className="text-[#cc0000] font-bold tracking-[0.3em] mb-4">SECTOR EXPERTISE</p>
             <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-none">
               Transforming <br /> 
-              <span className="text-[#b79662]">Vision into Reality.</span>
+              <span className="text-[#cc0000]">Vision into Reality.</span>
             </h2>
-             <div className="w-20 h-1 bg-[#b79662] mt-6" />
+             <div className="w-20 h-1 bg-[#cc0000] mt-6" />
 
           </div>
           <div className="pb-2">
-            <p className="text-gray-500 max-w-xs text-sm border-l-2 border-[#b79662] pl-6 italic">
+            <p className="text-gray-500 max-w-xs text-sm border-l-2 border-[#cc0000] pl-6 italic">
               "Strategic execution is the bridge between a great idea and a market leader."
             </p>
           </div>
@@ -610,10 +610,10 @@ export default function HomePage() {
 
               {/* Floating Content Box */}
               <div className="absolute -bottom-6 left-6 right-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100">
-                <span className="text-[#b79662] text-[10px] font-black uppercase tracking-[0.2em]">
+                <span className="text-[#cc0000] text-[10px] font-black  tracking-[0.2em]">
                   {item.category}
                 </span>
-                <h3 className="text-xl font-bold mt-2 group-hover:text-[#b79662] transition-colors">
+                <h3 className="text-xl font-bold mt-2 group-hover:text-[#cc0000] transition-colors">
                   {item.title}
                 </h3>
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
@@ -628,7 +628,7 @@ export default function HomePage() {
     </section>
 
       {/* ================= TESTIMONIAL ================= */}
-      <section className="py-20 bg-[#141414] overflow-hidden">
+      <section className="py-20 bg-[#f4f4f4] overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -636,19 +636,19 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="relative text-center"
           >
-            <span className="text-8xl text-[#b79662]/20 font-serif absolute -top-12 left-0">
+            <span className="text-8xl text-[#cc0000]/20 font-serif absolute -top-12 left-0">
               “
             </span>
-            <h2 className="text-2xl md:text-3xl italic leading-relaxed text-[#cfcfcf] relative z-10">
+            <h2 className="text-2xl md:text-3xl leading-relaxed text-[#222222] relative z-10">
               Harsha possesses a rare blend of operational discipline and
               visionary thinking. His ability to build Pan-India sales engines
               from scratch is unparalleled in the EdTech space.
             </h2>
             <div className="mt-10">
-              <div className="font-bold text-white text-lg">
+              <div className="font-bold text-[#b3b3b3] text-lg">
                 Former CEO / Board Member
               </div>
-              <div className="text-[#b79662] text-sm uppercase tracking-widest mt-1">
+              <div className="text-[#cc0000] text-sm  tracking-widest mt-1">
                 Top-Tier EdTech Organization
               </div>
             </div>
@@ -670,17 +670,17 @@ function Feature({ icon: Icon, title, children }) {
         y: -10,
         transition: { duration: 0.3 } 
       }}
-      className="bg-[#1e1e1e] border border-white/5 rounded-2xl p-8 hover:border-[#b79662] transition-all duration-300 shadow-2xl shadow-black/30 group"
+      className="bg-[#1e1e1e] border border-white/5 rounded-2xl p-8 hover:border-[#cc0000] transition-all duration-300 shadow-2xl shadow-black/30 group"
     >
       {/* ICON CONTAINER 
           - Default: bg is gold with 10% opacity
           - Hover: bg turns white, adds shadow to stand out against white section bg
       */}
-      <div className="bg-[#b79662]/10 w-14 h-14 rounded-lg flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-white group-hover:shadow-md">
-        <Icon className="text-[#b79662] text-3xl transition-transform duration-300 group-hover:scale-110" />
+      <div className="bg-[#cc0000]/10 w-14 h-14 rounded-lg flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-white group-hover:shadow-md">
+        <Icon className="text-[#cc0000] text-3xl transition-transform duration-300 group-hover:scale-110" />
       </div>
       
-      <h3 className="text-xl font-semibold mb-3 text-white transition-colors duration-300 group-hover:text-[#b79662]">
+      <h3 className="text-xl font-semibold mb-3 text-white transition-colors duration-300 group-hover:text-[#cc0000]">
         {title}
       </h3>
       <p className="text-[#cfcfcf] text-sm leading-relaxed">

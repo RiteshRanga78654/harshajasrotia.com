@@ -70,28 +70,28 @@ export default function ImageSlider() {
   }, [nextStep, isPaused]);
 
   return (
-    <section className="py-16 md:py-20 bg-[#1e1e1e] overflow-hidden">
+    <section className="py-16 md:py-20 bg-[#b3b3b3] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-8 md:mb-12 flex justify-between items-center">
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           className="text-2xl md:text-5xl font-bold text-white uppercase tracking-tighter"
         >
-          Moments of <span className="text-[#b79662]">Impact</span>
-                    <div className="w-20 h-1 bg-[#b79662] md:mx-auto mt-4" />
+          Moments of <span className="text-[#cc0000]">Impact</span>
+                    <div className="w-20 h-1 bg-[#cc0000] md:mx-auto mt-4" />
 
         </motion.h2>
 
         <div className="flex gap-2 md:gap-4 z-20">
           <button
             onClick={prevStep}
-            className="p-3 md:p-4 rounded-full border border-white/10 text-[#b79662] hover:bg-[#b79662] hover:text-black transition-all active:scale-90"
+            className="p-3 md:p-4 rounded-full border border-[#cc0000] text-[#cc0000] hover:bg-[#cc0000] hover:text-white transition-all active:scale-90"
           >
             <FaChevronLeft size={16} className="md:w-5 md:h-5" />
           </button>
           <button
             onClick={nextStep}
-            className="p-3 md:p-4 rounded-full border border-white/10 text-[#b79662] hover:bg-[#b79662] hover:text-black transition-all active:scale-90"
+            className="p-3 md:p-4 rounded-full border border-[#cc0000] text-[#cc0000] hover:bg-[#cc0000] hover:text-white transition-all active:scale-90"
           >
             <FaChevronRight size={16} className="md:w-5 md:h-5" />
           </button>
@@ -127,7 +127,7 @@ export default function ImageSlider() {
                   filter: i === index ? "blur(0px)" : "blur(1px)",
                 }}
                 style={{ width: `${dimensions.width}px` }}
-                className="relative flex-shrink-0 h-[300px] md:h-[450px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
+                className="relative flex-shrink-0 h-[300px] md:h-[450px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border border-[#cc0000]/10 shadow-2xl"
               >
                 <img
                   src={img.src}
@@ -136,12 +136,12 @@ export default function ImageSlider() {
                 />
                 
                 <div
-                  className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-6 md:p-8 flex items-end transition-opacity duration-500 ${
+                  className={`absolute inset-0 bg-gradient-to-t from-[#cc0000]/30 via-black/20 to-[#cc0000]/30 p-6 md:p-8 flex items-end transition-opacity duration-500 ${
                     i === index ? "opacity-100" : "opacity-0"
                   }`}
                 >
                   <div>
-                    <p className="text-[#b79662] text-[10px] md:text-xs font-mono uppercase tracking-[0.3em] mb-1 md:mb-2">
+                    <p className="text-[#cc0000] text-[10px] md:text-xs font-mono  tracking-[0.3em] mb-1 md:mb-2">
                       Leadership Spotlight
                     </p>
                     <h3 className="text-white font-bold text-lg md:text-3xl tracking-tight">
@@ -161,8 +161,8 @@ export default function ImageSlider() {
             key={i}
             className={`h-1 rounded-full transition-all duration-500 ${
               index % originalImages.length === i
-                ? "w-8 md:w-12 bg-[#b79662]"
-                : "w-2 md:w-3 bg-white/10"
+                ? "w-8 md:w-12 bg-[#cc0000]"
+                : "w-2 md:w-3 bg-[#cc0000]/10"
             }`}
           />
         ))}

@@ -1,6 +1,8 @@
 "use client";
 
-import React from "react";
+import React  from "react";
+import Link from "next/link";
+
 import {
   FaMapMarkerAlt,
   FaEnvelope,
@@ -15,7 +17,7 @@ import {
 const Footer = () => {
   return (
     <div className="relative font-sans">
-      <footer className="bg-[#262626] text-gray-300 pt-16 pb-8">
+      <footer className="bg-[#cc0000] text-[#f4f4f4] pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4">
           {/* Main Grid Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
@@ -23,16 +25,22 @@ const Footer = () => {
             {/* Column 1: Bio & Logo */}
             <div className="space-y-6">
               <div className="flex flex-col items-start">
-                <img
+                {/* <img
                   src="/assets/images/logo.png"
                   alt="Harsha Jasrotia"
                   width={120}
                   height={50}
                   className="object-contain"
-                />
+                /> */}
+                <Link
+              href="/"
+              className="text-lg md:text-xl font-semibold tracking-wide text-[#f4f4f4]"
+            >
+              Harsha Jasrotia
+            </Link>
               </div>
 
-              <p className="text-sm leading-7 text-gray-200">
+              <p className="text-sm leading-7 text-[#f4f4f4]">
                 Harsha Jasrotia is a seasoned operations and strategy leader,
                 known for driving organizational efficiency, scalable growth,
                 and cross-functional excellence through structured execution
@@ -42,7 +50,7 @@ const Footer = () => {
 
             {/* Column 2: Extra Links */}
             <div className="lg:pl-10">
-              <h3 className="text-[#cba36f] text-xl font-extrabold mb-6 uppercase">
+              <h3 className="text-[#f4f4f4] text-xl font-extrabold mb-6 uppercase">
                 Extra Links
               </h3>
               <ul className="space-y-3 text-[15px]">
@@ -57,7 +65,7 @@ const Footer = () => {
                   <li key={item}>
                     <a
                       href="#"
-                      className="hover:text-[#cba36f] transition-colors"
+                      className="hover:text-[#cc0000] transition-colors"
                     >
                       {item}
                     </a>
@@ -68,24 +76,24 @@ const Footer = () => {
 
             {/* Column 3: Get In Touch */}
             <div className="lg:pl-2">
-              <h3 className="text-[#cba36f] text-xl font-extrabold mb-6 uppercase">
+              <h3 className="text-[#f4f4f4] text-xl font-extrabold mb-6 uppercase">
                 Get In Touch
               </h3>
 
               <div className="flex items-center gap-3 mb-4">
-                <FaEnvelope className="text-white shrink-0" />
+                <FaEnvelope className="text-[#f4f4f4] shrink-0" />
                 <a
                   href="mailto:connect@harshajasrotia.com"
-                  className="hover:text-[#cba36f]"
+                  className="hover:text-[#cc0000]"
                 >
                   connect@harshajasrotia.com
                 </a>
               </div>
 
               <div className="flex items-start gap-3">
-                <FaPhoneAlt className="mt-1 text-white shrink-0" />
+                <FaPhoneAlt className="mt-1 text-[#f4f4f4] shrink-0" />
                 <div className="flex flex-col">
-                  <a href="tel:+919999999999" className="hover:text-[#cba36f]">
+                  <a href="tel:+919999999999" className="hover:text-[#f4f4f4]">
                     +91 99XXX XXXXX
                   </a>
                 </div>
@@ -94,11 +102,11 @@ const Footer = () => {
 
             {/* Column 4: Address */}
             <div>
-              <h3 className="text-[#cba36f] text-xl font-extrabold mb-6 uppercase">
+              <h3 className="text-[#f4f4f4] text-xl font-extrabold mb-6 uppercase">
                 Address
               </h3>
               <div className="flex items-start gap-3 text-[15px]">
-                <FaMapMarkerAlt className="mt-1 text-white shrink-0" />
+                <FaMapMarkerAlt className="mt-1 text-[#f4f4f4] shrink-0" />
                 <p>
                   Corporate Business District <br />
                   Gurugram – 122018 <br />
@@ -109,7 +117,7 @@ const Footer = () => {
 
             {/* Column 5: Follow Me */}
             <div>
-              <h3 className="text-[#cba36f] text-xl font-extrabold mb-6 uppercase">
+              <h3 className="text-[#f4f4f4] text-xl font-extrabold mb-6 uppercase">
                 Follow Me
               </h3>
 
@@ -169,17 +177,17 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="bg-black py-6 mt-8 border-t border-gray-800">
-          <div className="max-w-7xl mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <div className="bg-[#b3b3b3] py-6 mt-8 border-t border-[#b3b3b3]">
+          <div className="max-w-7xl mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-[#222222]">
             <p>
               © {new Date().getFullYear()} Harsha Jasrotia. All Rights Reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-white">Disclaimer</a>
+              <a href="#" className="hover:text-[#cc0000]">Disclaimer</a>
               <span>|</span>
-              <a href="#" className="hover:text-white">Privacy Policy</a>
+              <a href="#" className="hover:text-[#cc0000]">Privacy Policy</a>
               <span>|</span>
-              <a href="#" className="hover:text-white">Terms of Use</a>
+              <a href="#" className="hover:text-[#cc0000]">Terms of Use</a>
             </div>
           </div>
         </div>

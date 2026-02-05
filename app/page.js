@@ -157,8 +157,8 @@ export default function HomePage() {
 
       <HeroSection />
       {/* ================= STATS ================= */}
-      <section className="py-15 bg-[#1e1e1e]">
-        <div className="max-w-7xl bg-[#1e1e1e] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+      <section className="py-15 bg-[#cc0000]">
+        <div className="max-w-7xl bg-[#cc0000] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
           {[
             ["20+", "Years Experience"],
             ["EdTech", "Industry"],
@@ -172,8 +172,8 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <h3 className="text-3xl font-bold text-[#cc0000]">{num}</h3>
-              <p className="mt-2 text-[#cfcfcf]">{label}</p>
+              <h3 className="text-3xl font-bold text-[#f4f4f4]">{num}</h3>
+              <p className="mt-2 text-[#f4f4f4]">{label}</p>
             </motion.div>
           ))}
         </div>
@@ -221,12 +221,12 @@ export default function HomePage() {
 </section>
 
      {/* ================= TRUSTED BY ================= */}
-<section className="py-20 border-y border-white/5 bg-[#1e1e1e] backdrop-blur-sm">
+<section className="py-20 border-y border-white/5 bg-[#b3b3b3] backdrop-blur-sm">
   <div className="max-w-7xl mx-auto px-6">
     <motion.p 
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      className="text-center text-xs  tracking-[0.5em] text-[#cc0000] mb-12 font-semibold"
+      className="text-center text-xl  tracking-[0.5em] text-[#cc0000] mb-12 font-semibold"
     >
       Strategic Leadership & Partnerships
     </motion.p>
@@ -237,7 +237,7 @@ export default function HomePage() {
           key={i}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 0.5, y: 0 }}
-          whileHover={{ opacity: 1, scale: 1.1, color: "#b79662" }}
+          whileHover={{ opacity: 1, scale: 1.1, color: "#cc0000" }}
           transition={{ delay: i * 0.1, duration: 0.5 }}
           className="text-xl md:text-2xl font-black tracking-tighter cursor-default transition-all"
         >
@@ -248,7 +248,7 @@ export default function HomePage() {
   </div>
 </section>
 
-<section className="py-20 bg-[#1e1e1e] relative overflow-hidden">
+<section className="py-20 bg-[#b3b3b3] relative overflow-hidden">
       {/* Background Decorative Text */}
       <div className="absolute top-10 right-[-5%] text-[15rem] font-black text-white/[0.02] select-none leading-none">
         STRATEGY
@@ -301,7 +301,7 @@ export default function HomePage() {
               Through Logical Precision.
             </h2>
             
-            <div className="space-y-6 text-[#cfcfcf] text-lg leading-relaxed">
+            <div className="space-y-6 text-[#f4f4f4] text-lg leading-relaxed">
               <p>
                 With over two decades of experience, Harsha Jasrotia stands at the intersection of 
                 <strong> analytical engineering</strong> and <strong>high-stakes business execution</strong>. 
@@ -350,10 +350,10 @@ export default function HomePage() {
       <h2 className="text-4xl md:text-5xl text-[#4c4949] font-bold mb-3">
         Scaling <span className="text-[#cc0000]">Blueprint</span>
       </h2>
-      <div className="w-20 h-1 bg-[#cc0000] mx-auto mt-4" />
+      <div className="w-20 h-1 bg-[#f4f4f4] mx-auto mt-4" />
     </motion.div>
 
-    <div className="grid lg:grid-cols-3 bg-[#1e1e1e] gap-0">
+    <div className="grid lg:grid-cols-3 bg-[#cc0000] gap-0">
       {[
         { step: "01", title: "Strategic Audit", desc: "Granular analysis of sales funnels and operational leakage to find hidden ROI." },
         { step: "02", title: "Cultural Alignment", desc: "Instilling a high-stakes, performance-driven mindset across the organization." },
@@ -368,11 +368,11 @@ export default function HomePage() {
           whileHover={{ backgroundColor: "rgba(183, 150, 98, 0.03)" }}
           className="relative p-12 border border-white/5 hover:border-[#cc0000]/30 transition-all duration-500 group"
         >
-          <div className="text-sm font-mono text-[#cc0000] mb-6 block tracking-widest">{item.step} —</div>
-          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-[#cc0000] transition-colors">
+          <div className="text-sm font-mono text-[#f4f4f4] mb-6 block tracking-widest">{item.step} —</div>
+          <h3 className="text-2xl font-bold mb-4 text-white transition-colors">
             {item.title}
           </h3>
-          <p className="text-[#cfcfcf] leading-relaxed font-light">
+          <p className="text-[#f4f4f4] leading-relaxed font-light">
             {item.desc}
           </p>
           
@@ -460,7 +460,7 @@ export default function HomePage() {
               
               <div className="relative z-10">
                 <motion.p 
-                  className="text-[#f4f4f4] font-mono text-m  tracking-widest mb-6"
+                  className="text-[#f4f4f4] font-mono text-2xl  tracking-widest mb-6"
                 >
                   {p.tag}
                 </motion.p>
@@ -473,10 +473,10 @@ export default function HomePage() {
                   whileHover="hover"
                   className="inline-block"
                 >
-                  <p.icon className="text-3xl text-[#f4f4f4] mb-6 transition-transform group-hover:-translate-y-2 duration-300" />
+                  <p.icon className="text-5xl text-[#f4f4f4] mb-6 transition-transform group-hover:-translate-y-2 duration-300" />
                 </motion.div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 transition-colors group-hover:text-[#222222]">
+                <h3 className="text-2xl font-bold text-white mb-4 transition-colors group-hover:text-[#f4f4f4]">
                   {p.title}
                 </h3>
                 
@@ -670,20 +670,20 @@ function Feature({ icon: Icon, title, children }) {
         y: -10,
         transition: { duration: 0.3 } 
       }}
-      className="bg-[#1e1e1e] border border-white/5 rounded-2xl p-8 hover:border-[#cc0000] transition-all duration-300 shadow-2xl shadow-black/30 group"
+      className="bg-[#cc0000] border border-white/5 rounded-2xl p-8 transition-all duration-300 shadow-2xl shadow-black/30 group"
     >
       {/* ICON CONTAINER 
           - Default: bg is gold with 10% opacity
           - Hover: bg turns white, adds shadow to stand out against white section bg
       */}
-      <div className="bg-[#cc0000]/10 w-14 h-14 rounded-lg flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-white group-hover:shadow-md">
+      <div className="fsd w-14 h-14 rounded-lg flex items-center justify-center mb-6 transition-all duration-300 bg-white group-hover:shadow-md">
         <Icon className="text-[#cc0000] text-3xl transition-transform duration-300 group-hover:scale-110" />
       </div>
       
-      <h3 className="text-xl font-semibold mb-3 text-white transition-colors duration-300 group-hover:text-[#cc0000]">
+      <h3 className="text-xl font-semibold mb-3 text-white transition-colors duration-300 ">
         {title}
       </h3>
-      <p className="text-[#cfcfcf] text-sm leading-relaxed">
+      <p className="text-[#f4f4f4] text-sm leading-relaxed">
         {children}
       </p>
     </motion.div>

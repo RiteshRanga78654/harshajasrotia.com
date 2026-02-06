@@ -89,6 +89,15 @@ const pillars = [
     }
   ];
 
+    const partners = [
+    { name: "IREED", src: "/images/Ireed-Logo (1).png" },
+    { name: "Shiksha", src: "/images/shiksha-logo.jfif" },
+     { name: "IIT Patna", src: "/images/iit-patna-logo.png" },
+    { name: "Career Launcher", src: "/images/career-launcher-logo.png" },
+   { name: "M3M", src: "/images/m3m.png" },
+    
+  ];
+
 export default function HomePage() {
   return (
     <main className="bg-[#0f0f0f] text-white overflow-hidden">
@@ -157,7 +166,7 @@ export default function HomePage() {
 
       <HeroSection />
       {/* ================= STATS ================= */}
-      <section className="py-15 bg-[#cc0000]">
+      <section className="py-10 bg-[#cc0000]">
         <div className="max-w-7xl bg-[#cc0000] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
           {[
             ["20+", "Years Experience"],
@@ -221,7 +230,7 @@ export default function HomePage() {
 </section>
 
      {/* ================= TRUSTED BY ================= */}
-<section className="py-20 border-y border-white/5 bg-[#b3b3b3] backdrop-blur-sm">
+{/* <section className="py-20 border-y border-white/5 bg-[#b3b3b3] backdrop-blur-sm">
   <div className="max-w-7xl mx-auto px-6">
     <motion.p 
       initial={{ opacity: 0 }}
@@ -246,7 +255,42 @@ export default function HomePage() {
       ))}
     </div>
   </div>
-</section>
+</section> */}
+
+ <section className="py-10 bg-[#f4f4f4] md:mx-auto mx-4">
+        <div className="container mx-auto px-4">
+          {/* Logo Flex Container */}
+          <motion.p 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      className="text-center text-xl  tracking-[0.5em] text-[#cc0000] mb-12 font-semibold"
+    >
+      Strategic Leadership & Partnerships
+    </motion.p>
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
+            {partners.map((partner, index) => (
+              <div
+                key={index}
+                className="group relative flex items-center justify-center 
+                         w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 
+                         rounded-full border border-gray-100 shadow-sm 
+                         bg-white transition-all duration-300 ease-in-out 
+                         hover:shadow-xl hover:-translate-y-2 hover:border-blue-100"
+              >
+                {/* Logo Wrapper for Padding */}
+                <div className="w-3/4 h-3/4 flex items-center justify-center ">
+                  <img
+                    src={partner.src}
+                    alt={partner.name}
+                    style={{ borderRadius: "50%" }}
+                    className="max-w-full max-h-full  object-contain filter  group-hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
 <section className="py-20 bg-[#b3b3b3] relative overflow-hidden">
       {/* Background Decorative Text */}
@@ -350,7 +394,7 @@ export default function HomePage() {
       <h2 className="text-4xl md:text-5xl text-[#4c4949] font-bold mb-3">
         Scaling <span className="text-[#cc0000]">Blueprint</span>
       </h2>
-      <div className="w-20 h-1 bg-[#f4f4f4] mx-auto mt-4" />
+      <div className="w-20 h-1 bg-[#cc0000] mx-auto mt-4" />
     </motion.div>
 
     <div className="grid lg:grid-cols-3 bg-[#cc0000] gap-0">

@@ -25,7 +25,7 @@ export default function Header() {
               <NavItem href="/" label="Home" />
               <NavItem href="/testimonials" label="Testimonials" />
               <NavItem href="/the-journey" label="The Journey" />
-              <NavItem href="/strategic-insights" label="Strategic Insights" />
+              {/* <NavItem href="/strategic-insights" label="Strategic Insights" /> */}
               <NavItem href="/events-speaking" label="Events & Speaking" />
               <NavItem href="/media-gallery" label="Media & Gallery" />
               <NavItem href="/contact" label="Contact" />

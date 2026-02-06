@@ -203,15 +203,15 @@ export default function JourneyPage() {
               <motion.div
                 key={i}
                 whileHover={{ y: -10 }}
-                className="bg-[#1e1e1e] p-10 rounded-3xl shadow-sm border border-gray-100 group transition-all duration-300"
+                className="bg-[#cc0000] p-10 rounded-3xl shadow-sm border border-gray-100 group transition-all duration-300"
               >
-                <div className="text-[#cc0000] text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-[#ffffff] text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
                   {box.icon}
                 </div>
                 <h3 className="text-xl font-black mb-4  text-white tracking-tight ">
                   {box.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-[#f4f4f4] text-sm leading-relaxed">
                   {box.text}
                 </p>
               </motion.div>
@@ -258,7 +258,7 @@ export default function JourneyPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-[#1e1e1e] border-y border-gray-100 overflow-hidden">
+      <section className="py-10 bg-[#cc0000] border-y border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
             {stats.map((stat, i) => (
@@ -280,7 +280,7 @@ export default function JourneyPage() {
 
                 {/* Animated Label with gold accent bar */}
                 <div className="flex flex-col items-center">
-                  <p className="text-[15px] text-[#cc0000] font-black  tracking-[0.4em]">
+                  <p className="text-[15px] text-[#f4f4f4] font-black  tracking-[0.4em]">
                     {stat.label}
                   </p>
                   <motion.div
@@ -297,10 +297,10 @@ export default function JourneyPage() {
       </section>
 
       {/* ================= INTERACTIVE JOURNEY (TIMELINE) ================= */}
-      <section className="py-20 bg-white relative">
+      <section className="py-20 bg-[#b3b3b3] relative">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-15">
-            <h2 className="text-4xl md:text-5xl font-black text-[#1e1e1e] tracking-tighter  ">
+            <h2 className="text-4xl md:text-5xl font-black text-[#222222] tracking-tighter  ">
               The <span className="text-[#cc0000]">Trajectory</span>
             </h2>
           </div>
@@ -323,10 +323,10 @@ export default function JourneyPage() {
                     <div className="inline-block mb-4 text-[10px] font-black px-3 py-1 bg-[#cc0000]/10 text-[#cc0000] rounded-full  tracking-widest">
                       {item.company}
                     </div>
-                    <h3 className="text-3xl font-black text-[#1e1e1e]  tracking-tighter mb-2 group-hover:text-[#cc0000] transition-colors">
+                    <h3 className="text-3xl font-black text-[#222222]  tracking-tighter mb-2 group-hover:text-[#f4f4f4] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-gray-500 text-lg leading-relaxed font-light">
+                    <p className="text-[#f4f4f4] text-lg leading-relaxed font-light">
                       {item.desc}
                     </p>
                     <span className="md:hidden block mt-4 text-[#cc0000] font-black font-mono text-sm">
@@ -352,7 +352,7 @@ export default function JourneyPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-[#F2F2F2] overflow-hidden">
+      <section className="py-24 bg-[#F4f4f4] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           {/* Heading */}
           <motion.div
@@ -387,10 +387,10 @@ export default function JourneyPage() {
                     y: -5,
                     transition: { duration: 0.2 },
                   }}
-                  className="group relative bg-[#1e1e1e] p-8 rounded-xl border border-white/5 text-center cursor-default overflow-hidden"
+                  className="group relative bg-[#cc0000] p-8 rounded-xl border border-white/5 text-center cursor-default overflow-hidden"
                 >
                   {/* Animated Border Glow */}
-                  <div className="absolute inset-0 border border-transparent group-hover:border-[#cc0000]/30 transition-colors duration-500 rounded-xl pointer-events-none" />
+                  <div className="absolute inset-0 border border-transparent group-hover:border-[#222222]/30 transition-colors duration-500 rounded-xl pointer-events-none" />
 
                   {/* Inner Radial Glow */}
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(183,150,98,0.1)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -398,21 +398,21 @@ export default function JourneyPage() {
                   {/* Icon with scaling */}
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="text-[#cc0000] text-4xl mb-6 flex justify-center relative z-10 transition-transform"
+                    className="text-[#f4f4f4] text-4xl mb-6 flex justify-center relative z-10 transition-transform"
                   >
                     {skill.icon} {/* <--- Now 'skill' is properly recognized */}
                   </motion.div>
 
-                  <h4 className="font-bold text-white text-sm uppercase tracking-widest mb-2 relative z-10 group-hover:text-[#cc0000] transition-colors duration-300">
+                  <h4 className="font-bold text-white text-sm uppercase tracking-widest mb-2 relative z-10 group-hover:text-[#222222] transition-colors duration-300">
                     {skill.title}
                   </h4>
 
-                  <p className="text-[10px] text-gray-500 font-black tracking-[0.2em] relative z-10">
+                  <p className="text-[10px] text-[#f4f4f4] font-black tracking-[0.2em] relative z-10">
                     {skill.level}
                   </p>
 
                   {/* Bottom Accent Line */}
-                  <div className="relative h-[2px] w-0 bg-[#cc0000] mx-auto mt-4 group-hover:w-1/3 transition-all duration-500 ease-out" />
+                  <div className="relative h-[2px] w-0 bg-[#f4f4f4] mx-auto mt-4 group-hover:w-1/3 transition-all duration-500 ease-out" />
                 </motion.div>
               ),
             )}

@@ -5,15 +5,14 @@ import { motion } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const originalImages = [
-  { src: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "Strategic Leadership" },
-  { src: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "Real Estate Training" },
-  { src: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "EdTech Innovation" },
-  { src: "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "Operational Scale" },
-  { src: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "Real Estate Training" },
-  { src: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "EdTech Innovation" },
-  { src: "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", title: "Operational Scale" },
+  { src: "/Harshjasrotia.com/Ritesh/Photos/DSC02216.JPG", title: "Strategic Leadership" },
+  { src: "/Harshjasrotia.com/Ritesh/Photos/DSC02207.JPG", title: "Real Estate Training" },
+  { src: "/Harshjasrotia.com/Ritesh/Photos/DSC02392.JPG", title: "EdTech Innovation" },
+  { src: "/Harshjasrotia.com/Ritesh/Photos/DSC02368.JPG", title: "Operational Scale" },
+  { src: "/Harshjasrotia.com/Ritesh/Photos/DSC02284.JPG", title: "Real Estate Training" },
+  { src: "/Harshjasrotia.com/Ritesh/Photos/Screenshot 2026-02-06 171507.png", title: "EdTech Innovation" },
+  { src: "/Harshjasrotia.com/Ritesh/Photos/Screenshot 2026-02-06 165519.png", title: "Operational Scale" },
 ];
-
 const images = [...originalImages, ...originalImages, ...originalImages];
 
 export default function ImageSlider() {
@@ -71,14 +70,14 @@ export default function ImageSlider() {
 
   return (
     <section className="py-16 md:py-20 bg-[#b3b3b3] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 mb-8 md:mb-12 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 mb-4 flex justify-between items-center">
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          className="text-2xl md:text-5xl font-bold text-white uppercase tracking-tighter"
+          className="text-2xl md:text-5xl font-bold text-white  tracking-tighter"
         >
           Moments of <span className="text-[#cc0000]">Impact</span>
-                    <div className="w-20 h-1 bg-[#cc0000] md:mx-auto mt-4" />
+                    <div className="w-20 h-1 bg-[#cc0000] mt-4 md:mx-auto" />
 
         </motion.h2>
 
@@ -136,12 +135,12 @@ export default function ImageSlider() {
                 />
                 
                 <div
-                  className={`absolute inset-0 bg-gradient-to-t from-[#cc0000]/30 via-black/20 to-[#cc0000]/30 p-6 md:p-8 flex items-end transition-opacity duration-500 ${
+                  className={`absolute inset-0 bg-gradient-to-t from-[#cc0000]/30 t0-black/20 p-6 md:p-8 flex items-end transition-opacity duration-500 ${
                     i === index ? "opacity-100" : "opacity-0"
                   }`}
                 >
                   <div>
-                    <p className="text-[#cc0000] text-[10px] md:text-xs font-mono  tracking-[0.3em] mb-1 md:mb-2">
+                    <p className="text-[#f4f4f4] text-[10px] md:text-xs font-mono  tracking-[0.3em] mb-1 md:mb-2">
                       Leadership Spotlight
                     </p>
                     <h3 className="text-white font-bold text-lg md:text-3xl tracking-tight">
@@ -155,7 +154,7 @@ export default function ImageSlider() {
         </div>
       </div>
 
-      <div className="flex justify-center gap-2 md:gap-3 mt-8 md:mt-12">
+      <div className="flex justify-center gap-2 md:gap-3 mt-4">
         {originalImages.map((_, i) => (
           <div
             key={i}

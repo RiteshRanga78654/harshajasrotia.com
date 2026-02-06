@@ -5,9 +5,9 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <section
-      className="relative min-h-[90vh] flex items-center bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('/001.png')",
+        backgroundImage: "url('/Harshjasrotia.com/Ritesh/Photos/Screenshot 2026-02-06 170558.png')",
       }}
     >
       {/* Dark Overlay */}
@@ -16,11 +16,11 @@ const HeroSection = () => {
       {/* Gold Gradient Accent */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#b79662]/20 via-transparent to-transparent"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
+      <div className="relative z-10 max-w-7xl mr-25 px-6 md:px-10">
         <div className="max-w-3xl">
           
           {/* Subtitle */}
-          <p className=" tracking-widest text-xl text-[#cc0000] mb-5">
+          <p className=" tracking-widest text-xl text-[#ffffff] mb-5">
             COO · IIT Patna · Real Estate Trainer
           </p>
 
@@ -28,7 +28,7 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight text-white">
             Driving Strategic
             <br />
-            <span className="text-[#cc0000]">Growth & Execution</span>
+            <span className="text-[#ffffff]">Growth & Execution</span>
           </h1>
 
           {/* Description */}
@@ -42,7 +42,7 @@ const HeroSection = () => {
           <div className="mt-10 flex flex-wrap gap-5">
             <Link
               href="/contact"
-              className="relative overflow-hidden rounded-md border-2 border-[#cc0000] px-6 py-3 font-semibold text-white group"
+              className="relative overflow-hidden rounded-md border-2 border-[#ffffff] px-6 py-3 font-semibold text-white group"
             >
               <span className="absolute inset-0 w-0 bg-[#cc0000] transition-all duration-300 group-hover:w-full"></span>
               <span className="relative z-10 group-hover:text-[#1e1e1e]">
@@ -52,7 +52,7 @@ const HeroSection = () => {
 
             <Link
               href="/journey"
-              className="px-6 py-3 rounded-md border border-[#4c4949] text-[#e0e0e0] hover:border-[#cc0000] hover:text-[#cc0000] transition"
+              className="px-6 py-3 rounded-md border border-[#ffffff] text-[#ffffff] transition"
             >
               View The Journey
             </Link>

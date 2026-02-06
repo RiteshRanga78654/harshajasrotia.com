@@ -72,19 +72,19 @@ const pillars = [
     {
       title: "EdTech Revolution",
       category: "Scaling Operations",
-      img: "https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      img: "/Harshjasrotia.com/Ritesh/Photos/DSC02314.JPG",
       stat: "100+ Cities"
     },
     {
       title: "Real Estate Mastery",
       category: "Sales Leadership",
-      img: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      img: "/Harshjasrotia.com/Ritesh/Photos/DSC02328.JPG",
       stat: "20+ Years"
     },
     {
       title: "IIT Mentorship",
       category: "Strategy & Logic",
-      img: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      img: "/Harshjasrotia.com/Ritesh/Photos/P_K00141 - Copy.JPG",
       stat: "Academic "
     }
   ];
@@ -314,17 +314,17 @@ export default function HomePage() {
 <div className="absolute -top-4 -left-3 md:-top-6 md:-left-6 w-24 h-24 md:w-32 md:h-32 border-t-2 border-l-2 border-[#cc0000] z-10" />            
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <Image 
-                src="/001.png" // Use the same top-aligned professional image
+                src="/Harshjasrotia.com/Ritesh/Photos/DSC02338.JPG" // Use the same top-aligned professional image
                 alt="Harsha Jasrotia - Chief Operating Officer"
                 fill
-                className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                className="object-cover object-top scale-x-[-1]  hover:scale-105 transition-transform duration-700"
               />
             </div>
 
             {/* Floating Experience Badge */}
             <div className="absolute -bottom-10 -right-10 bg-[#cc0000] p-8 rounded-2xl hidden md:block shadow-2xl">
-              <p className="text-black font-black text-4xl tracking-tighter">20+</p>
-              <p className="text-black text-[10px] font-bold  tracking-widest leading-none">
+              <p className="text-white font-black text-4xl tracking-tighter">20+</p>
+              <p className="text-white text-[10px] font-bold  tracking-widest leading-none">
                 Years of <br /> Excellence
               </p>
             </div>

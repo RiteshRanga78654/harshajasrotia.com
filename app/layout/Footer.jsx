@@ -49,34 +49,34 @@ const Footer = () => {
             </div>
 
             {/* Column 2: Extra Links */}
-            <div className="lg:pl-10">
-              <h3 className="text-[#f4f4f4] text-xl font-extrabold mb-6 uppercase">
-                Extra Links
-              </h3>
-              <ul className="space-y-3 text-[15px]">
-                {[
-                  "Home",
-                  "The Journey",
-                  "Strategic Insights",
-                  "Events & Speaking",
-                  "Media & Gallery",
-                  "Contact",
-                ].map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      className="hover:text-[#cc0000] transition-colors"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+           {/* Column 2: Extra Links */}
+<div className="lg:pl-10">
+  <h3 className="text-[#f4f4f4] text-xl font-extrabold mb-6">
+    Extra Links
+  </h3>
+  <ul className="space-y-3 text-[15px]">
+    {[
+      { name: "Home", path: "/" },
+      { name: "The Journey", path: "/the-journey" }, // Or "/about"
+      { name: "Events & Speaking", path: "/events-speaking" },
+      { name: "Media & Gallery", path: "/media-gallery" },
+      { name: "Contact", path: "/contact" },
+    ].map((item) => (
+      <li key={item.name}>
+        <Link
+          href={item.path}
+          className="hover:text-[#222222] transition-colors"
+        >
+          {item.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
             {/* Column 3: Get In Touch */}
             <div className="lg:pl-2">
-              <h3 className="text-[#f4f4f4] text-xl font-extrabold mb-6 uppercase">
+              <h3 className="text-[#f4f4f4] text-xl font-extrabold mb-6 ">
                 Get In Touch
               </h3>
 
@@ -84,7 +84,7 @@ const Footer = () => {
                 <FaEnvelope className="text-[#f4f4f4] shrink-0" />
                 <a
                   href="mailto:connect@harshajasrotia.com"
-                  className="hover:text-[#cc0000]"
+                  className="hover:text-[#222222]"
                 >
                   connect@harshajasrotia.com
                 </a>
@@ -102,7 +102,7 @@ const Footer = () => {
 
             {/* Column 4: Address */}
             <div>
-              <h3 className="text-[#f4f4f4] text-xl font-extrabold mb-6 uppercase">
+              <h3 className="text-[#f4f4f4] text-xl font-extrabold mb-6 ">
                 Address
               </h3>
               <div className="flex items-start gap-3 text-[15px]">
@@ -117,7 +117,7 @@ const Footer = () => {
 
             {/* Column 5: Follow Me */}
             <div>
-              <h3 className="text-[#f4f4f4] text-xl font-extrabold mb-6 uppercase">
+              <h3 className="text-[#f4f4f4] text-xl font-extrabold mb-6 ">
                 Follow Me
               </h3>
 

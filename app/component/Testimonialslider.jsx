@@ -100,7 +100,7 @@ const TestimonialSlider = () => {
   }, [isPaused, nextSlide]);
 
   return (
-    <section className="bg-white pt-20 px-4 sm:px-6 lg:px-12 w-full overflow-hidden">
+    <section className="bg-white pt-20 pb-10 px-4 sm:px-6 lg:px-12 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header with Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 border-b border-gray-100 pb-8">

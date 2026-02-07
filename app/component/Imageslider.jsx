@@ -1,170 +1,201 @@
+
+
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { motion } from "framer-motion";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, X, Calendar, Search } from "lucide-react";
 
-const originalImages = [
-  { src: "/Harshjasrotia.com/Ritesh/Photos/DSC02216.JPG", title: "Strategic Leadership" },
-  { src: "/Harshjasrotia.com/Ritesh/Photos/DSC02207.JPG", title: "Real Estate Training" },
-  { src: "/Harshjasrotia.com/Ritesh/Photos/DSC02392.JPG", title: "EdTech Innovation" },
-  { src: "/Harshjasrotia.com/Ritesh/Photos/DSC02368.JPG", title: "Operational Scale" },
-  { src: "/Harshjasrotia.com/Ritesh/Photos/DSC02284.JPG", title: "Real Estate Training" },
-  { src: "/Harshjasrotia.com/Ritesh/Photos/Screenshot 2026-02-06 171507.png", title: "EdTech Innovation" },
-  { src: "/Harshjasrotia.com/Ritesh/Photos/Screenshot 2026-02-06 165519.png", title: "Operational Scale" },
+// Swiper Styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
+
+const events = [
+  { id:1 , src: "/Harshjasrotia.com/Ritesh/Photos/DSC02216.JPG", title: "Strategic Leadership" },
+  { id:2 , src: "/Harshjasrotia.com/Ritesh/Photos/DSC02207.JPG", title: "Real Estate Training" },
+  { id:3 , src: "/Harshjasrotia.com/Ritesh/Photos/DSC02392.JPG", title: "EdTech Innovation" },
+  { id:4 , src: "/Harshjasrotia.com/Ritesh/Photos/DSC02368.JPG", title: "Operational Scale" },
+  { id:5 , src: "/Harshjasrotia.com/Ritesh/Photos/DSC02284.JPG", title: "Real Estate Training" },
+  { id:6 , src: "/Harshjasrotia.com/Ritesh/Photos/Screenshot 2026-02-06 171507.png", title: "EdTech Innovation" },
+  { id:7 , src: "/Harshjasrotia.com/Ritesh/Photos/Screenshot 2026-02-06 165519.png", title: "Operational Scale" },
+
 ];
-const images = [...originalImages, ...originalImages, ...originalImages];
+export default function EventSlider() {
+  const [activeImg, setActiveImg] = useState(null);
+  const brandGreen = "#22c55e";
 
-export default function ImageSlider() {
-  const [index, setIndex] = useState(originalImages.length);
-  const [isPaused, setIsPaused] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(true);
-  
-  // Dynamic measurements
-  const [dimensions, setDimensions] = useState({ width: 500, gap: 40 });
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    setActiveImg((prev) => (prev === 0 ? events.length - 1 : prev - 1));
+  };
 
-  // Update dimensions based on screen size
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setDimensions({ width: window.innerWidth * 0.8, gap: 20 });
-      } else {
-        setDimensions({ width: 500, gap: 40 });
-      }
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const totalWidth = dimensions.width + dimensions.gap;
-
-  useEffect(() => {
-    if (index >= originalImages.length * 2) {
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setIndex(originalImages.length);
-      }, 700);
-    }
-    if (index < originalImages.length) {
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setIndex(originalImages.length * 2 - 1);
-      }, 700);
-    }
-    if (!isTransitioning) {
-      const timeout = setTimeout(() => setIsTransitioning(true), 50);
-      return () => clearTimeout(timeout);
-    }
-  }, [index, isTransitioning]);
-
-  const nextStep = useCallback(() => setIndex((prev) => prev + 1), []);
-  const prevStep = useCallback(() => setIndex((prev) => prev - 1), []);
-
-  useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(nextStep, 1500);
-      return () => clearInterval(interval);
-    }
-  }, [nextStep, isPaused]);
+  const handleNext = (e) => {
+    e.stopPropagation();
+    setActiveImg((prev) => (prev === events.length - 1 ? 0 : prev + 1));
+  };
 
   return (
-    <section className="py-16 md:py-20 bg-[#b3b3b3] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 mb-4 flex justify-between items-center">
-        <motion.h2
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          className="text-2xl md:text-5xl font-bold text-white  tracking-tighter"
-        >
-          Moments of <span className="text-[#cc0000]">Impact</span>
-                    <div className="w-20 h-1 bg-[#cc0000] mt-4 md:mx-auto" />
+    <section className="pb-24 bg-[#fcfdfd] px-4 overflow-hidden min-h-screen ">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* --- Header Section --- */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="text-left">
+            <p className="text-[10px] tracking-[0.5em] text-emerald-600 font-bold mb-4 uppercase">
+              Exclusive Memories
+            </p>
+            <h2 className="text-5xl md:text-7xl font-Condensed Sans-Serif text-slate-900 leading-[0.85]">
+              Clubhouse <br />
+              <span style={{ color: brandGreen }}>Events Gallery</span>
+            </h2>
+          </div>
 
-        </motion.h2>
-
-        <div className="flex gap-2 md:gap-4 z-20">
-          <button
-            onClick={prevStep}
-            className="p-3 md:p-4 rounded-full border border-[#cc0000] text-[#cc0000] hover:bg-[#cc0000] hover:text-white transition-all active:scale-90"
-          >
-            <FaChevronLeft size={16} className="md:w-5 md:h-5" />
-          </button>
-          <button
-            onClick={nextStep}
-            className="p-3 md:p-4 rounded-full border border-[#cc0000] text-[#cc0000] hover:bg-[#cc0000] hover:text-white transition-all active:scale-90"
-          >
-            <FaChevronRight size={16} className="md:w-5 md:h-5" />
-          </button>
+          {/* Slider Navigation Buttons */}
+          <div className="flex gap-4">
+            <button className="event-prev-btn w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-slate-800 hover:bg-[#022c22] hover:text-white transition-all duration-500 cursor-pointer shadow-sm group">
+              <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
+            </button>
+            <button className="event-next-btn w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-slate-800 hover:bg-[#022c22] hover:text-white transition-all duration-500 cursor-pointer shadow-sm group">
+              <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div
-        className="relative w-full h-[350px] md:h-[550px]"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        onTouchStart={() => setIsPaused(true)}
-        onTouchEnd={() => setIsPaused(false)}
-      >
-        <div className="absolute left-1/2 top-0 h-full flex items-center">
-          <motion.div
-            className="flex"
-            style={{ gap: `${dimensions.gap}px` }}
-            animate={{
-              x: -(index * totalWidth) - dimensions.width / 2,
-            }}
-            transition={
-              isTransitioning
-                ? { duration: 0.7, ease: [0.32, 0.72, 0, 1] }
-                : { duration: 0 }
-            }
-          >
-            {images.map((img, i) => (
-              <motion.div
-                key={i}
-                animate={{
-                  scale: i === index ? 1 : 0.85,
-                  opacity: i === index ? 1 : 0.3,
-                  filter: i === index ? "blur(0px)" : "blur(1px)",
-                }}
-                style={{ width: `${dimensions.width}px` }}
-                className="relative flex-shrink-0 h-[300px] md:h-[450px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border border-[#cc0000]/10 shadow-2xl"
+        {/* --- Main Swiper Slider --- */}
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+          effect="coverflow"
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          loop={true}
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2,
+            slideShadows: false,
+          }}
+          navigation={{
+            prevEl: ".event-prev-btn",
+            nextEl: ".event-next-btn",
+          }}
+          className="w-full !overflow-visible"
+        >
+          {events.map((event, index) => (
+            <SwiperSlide key={event.id} className="max-w-[320px] md:max-w-[450px]">
+              {/* Har Image Card ab Clickable hai */}
+              <motion.div 
+                whileHover={{ y: -10 }}
+                onClick={() => setActiveImg(index)}
+                className="group relative aspect-[3/4] rounded-[2rem] overflow-hidden bg-slate-200 cursor-pointer shadow-2xl transition-all duration-500"
               >
-                <img
-                  src={img.src}
-                  alt={img.title}
-                  className="w-full h-full object-cover select-none"
+                <img 
+                  src={event.src} 
+                  alt={event.title} 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
                 />
                 
-                <div
-                  className={`absolute inset-0 bg-gradient-to-t from-[#cc0000]/30 t0-black/20 p-6 md:p-8 flex items-end transition-opacity duration-500 ${
-                    i === index ? "opacity-100" : "opacity-0"
-                  }`}
-                >
-                  <div>
-                    <p className="text-[#f4f4f4] text-[10px] md:text-xs font-mono  tracking-[0.3em] mb-1 md:mb-2">
-                      Leadership Spotlight
-                    </p>
-                    <h3 className="text-white font-bold text-lg md:text-3xl tracking-tight">
-                      {img.title}
-                    </h3>
+                {/* Overlay with Search Icon on Hover */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                   <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30 scale-50 group-hover:scale-100 transition-transform duration-500">
+                      <Search size={32} />
+                   </div>
+                </div>
+
+                {/* Event Details (Bottom) */}
+                <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                    <div className="flex items-center gap-2 text-emerald-400 mb-2 font-bold text-[10px] tracking-widest uppercase">
+                      <Calendar size={14} /> {event.date}
+                    </div>
+                    <h3 className="text-white text-3xl font-Condensed Sans-Serif uppercase tracking-tight">{event.title}</h3>
+                </div>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* --- Modern Lightbox Modal --- */}
+        <AnimatePresence>
+          {activeImg !== null && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[2000] bg-[#022c22]/98 backdrop-blur-2xl flex items-center justify-center p-4"
+              onClick={() => setActiveImg(null)}
+            >
+              {/* Close Button Top-Right */}
+              <button 
+                className="absolute top-8 right-8 text-white/40 hover:text-white transition-all bg-white/5 p-4 rounded-full hover:bg-white/10 z-[2100]"
+                onClick={() => setActiveImg(null)}
+              >
+                <X size={36} strokeWidth={1.5} />
+              </button>
+
+              {/* Lightbox Navigation Left */}
+              <button 
+                className="absolute left-4 md:left-10 text-white/30 hover:text-white transition-all z-[2100] hidden sm:block"
+                onClick={handlePrev}
+              >
+                <div className="p-4 rounded-full border border-white/10 hover:border-white/40 transition-colors bg-white/5">
+                    <ChevronLeft size={48} strokeWidth={1} />
+                </div>
+              </button>
+
+              {/* Center Image Content */}
+              <motion.div 
+                initial={{ scale: 0.9, y: 30, opacity: 0 }}
+                animate={{ scale: 1, y: 0, opacity: 1 }}
+                exit={{ scale: 0.9, y: 30, opacity: 0 }}
+                transition={{ type: "spring", damping: 25 }}
+                className="relative max-w-5xl w-full flex flex-col items-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="relative group/modal">
+                    <img 
+                      src={events[activeImg].src} 
+                      className="w-full h-auto max-h-[75vh] object-contain rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+                      alt="Full View"
+                    />
+                    
+                    {/* Mobile Navigation (Floating on image) */}
+                    <div className="flex sm:hidden absolute bottom-4 left-1/2 -translate-x-1/2 gap-6 bg-black/50 backdrop-blur-md px-6 py-3 rounded-full border border-white/10">
+                        <ChevronLeft className="text-white" onClick={handlePrev} />
+                        <span className="text-white/50 text-xs">{activeImg + 1} / {events.length}</span>
+                        <ChevronRight className="text-white" onClick={handleNext} />
+                    </div>
+                </div>
+
+                <div className="mt-8 text-center text-white">
+                  <h4 className="text-4xl md:text-5xl font-Condensed Sans-Serif tracking-wider uppercase mb-2">
+                    {events[activeImg].title}
+                  </h4>
+                  <div className="flex items-center justify-center gap-4 text-emerald-400 font-bold tracking-[0.5em] text-[10px] uppercase">
+                    <span className="h-[1px] w-8 bg-emerald-900"></span>
+                    {events[activeImg].date}
+                    <span className="h-[1px] w-8 bg-emerald-900"></span>
                   </div>
                 </div>
               </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
 
-      <div className="flex justify-center gap-2 md:gap-3 mt-4">
-        {originalImages.map((_, i) => (
-          <div
-            key={i}
-            className={`h-1 rounded-full transition-all duration-500 ${
-              index % originalImages.length === i
-                ? "w-8 md:w-12 bg-[#cc0000]"
-                : "w-2 md:w-3 bg-[#cc0000]/10"
-            }`}
-          />
-        ))}
+              {/* Lightbox Navigation Right */}
+              <button 
+                className="absolute right-4 md:right-10 text-white/30 hover:text-white transition-all z-[2100] hidden sm:block"
+                onClick={handleNext}
+              >
+                <div className="p-4 rounded-full border border-white/10 hover:border-white/40 transition-colors bg-white/5">
+                    <ChevronRight size={48} strokeWidth={1} />
+                </div>
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

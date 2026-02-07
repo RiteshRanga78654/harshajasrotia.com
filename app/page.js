@@ -190,7 +190,7 @@ export default function HomePage() {
       <Testimonialslider/>
       
      {/* ================= ICON SKILLS (WHITE BG VERSION) ================= */}
-<section className="py-20 bg-white"> 
+<section className="py-15 bg-white"> 
   <div className="max-w-7xl mx-auto px-6">
     <motion.h2
       initial="hidden"
@@ -257,13 +257,13 @@ export default function HomePage() {
   </div>
 </section> */}
 
- <section className="py-10 bg-[#f4f4f4] md:mx-auto mx-4">
+ <section className="py-10 bg-[#f4f4f4] md:mx-auto ">
         <div className="container mx-auto px-4">
           {/* Logo Flex Container */}
           <motion.p 
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      className="text-center text-xl  tracking-[0.5em] text-[#cc0000] mb-12 font-semibold"
+      className="text-center text-2xl  tracking-[0.5em] text-[#cc0000] mb-12 font-semibold"
     >
       Strategic Leadership & Partnerships
     </motion.p>
@@ -380,7 +380,7 @@ export default function HomePage() {
       </div>
     </section> 
 
-<section className="py-20 bg-[#ffffff] relative overflow-hidden">
+<section className="py-15 bg-[#ffffff] relative overflow-hidden">
   {/* Subtle Background Glow */}
   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#cc0000]/5 blur-[120px] rounded-full" />
 
@@ -397,7 +397,7 @@ export default function HomePage() {
       <div className="w-20 h-1 bg-[#cc0000] mx-auto mt-4" />
     </motion.div>
 
-    <div className="grid lg:grid-cols-3 bg-[#cc0000] gap-0">
+    <div className="grid lg:grid-cols-3 bg-[#cc0000] gap-0 border-5 border-[#000000]">
       {[
         { step: "01", title: "Strategic Audit", desc: "Granular analysis of sales funnels and operational leakage to find hidden ROI." },
         { step: "02", title: "Cultural Alignment", desc: "Instilling a high-stakes, performance-driven mindset across the organization." },
@@ -410,7 +410,7 @@ export default function HomePage() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: idx * 0.2 }}
           whileHover={{ backgroundColor: "rgba(183, 150, 98, 0.03)" }}
-          className="relative p-12 border border-white/5 hover:border-[#cc0000]/30 transition-all duration-500 group"
+          className="relative p-12 border-2 border-white/5 hover:border-[#ffffff] transition-all duration-500 group"
         >
           <div className="text-sm font-mono text-[#f4f4f4] mb-6 block tracking-widest">{item.step} —</div>
           <h3 className="text-2xl font-bold mb-4 text-white transition-colors">
@@ -422,7 +422,7 @@ export default function HomePage() {
           
           {/* Animated Line on Hover */}
           <motion.div 
-            className="absolute bottom-0 left-0 h-[2px] bg-[#cc0000] w-0 group-hover:w-full transition-all duration-500"
+            className="absolute bottom-0 left-0 h-[2px] bg-[#ffffff] w-0 group-hover:w-full transition-all duration-500"
           />
         </motion.div>
       ))}
@@ -470,7 +470,7 @@ export default function HomePage() {
         </Link>
       </section> */}
 
-      <section className="py-20 bg-[#ffffff] relative overflow-hidden">
+      <section className="py-15 bg-[#ffffff] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-[#4c4949] mb-6">

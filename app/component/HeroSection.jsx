@@ -16,7 +16,7 @@ const HeroSection = () => {
       {/* Gold Gradient Accent */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#b79662]/20 via-transparent to-transparent"></div>
 
-      <div className="relative z-10 max-w-7xl mr-25 px-6 md:px-10">
+      <div className="relative z-10 max-w-7xl  px-6 md:px-10">
         <div className="max-w-3xl">
           
           {/* Subtitle */}
@@ -45,17 +45,17 @@ const HeroSection = () => {
               className="relative overflow-hidden rounded-md border-2 border-[#ffffff] px-6 py-3 font-semibold text-white group"
             >
               <span className="absolute inset-0 w-0 bg-[#cc0000] transition-all duration-300 group-hover:w-full"></span>
-              <span className="relative z-10 group-hover:text-[#1e1e1e]">
+              <span className="relative z-10 group-hover:text-[#ffffff]">
                 Get In Touch
               </span>
             </Link>
 
-            <Link
+            {/* <Link
               href="/journey"
               className="px-6 py-3 rounded-md border border-[#ffffff] text-[#ffffff] transition"
             >
               View The Journey
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

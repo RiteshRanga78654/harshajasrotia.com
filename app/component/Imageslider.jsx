@@ -43,15 +43,14 @@ export default function EventSlider() {
       <div className="max-w-7xl mx-auto">
         
         {/* --- Header Section --- */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end py-8 mb-16 gap-6">
           <div className="text-left">
             <p className="text-[10px] tracking-[0.5em] text-emerald-600 font-bold mb-4 uppercase">
-              Exclusive Memories
+              
             </p>
-            <h2 className="text-5xl md:text-7xl font-Condensed Sans-Serif text-slate-900 leading-[0.85]">
-              Clubhouse <br />
-              <span style={{ color: brandGreen }}>Events Gallery</span>
-            </h2>
+            <h2 className="text-4xl md:text-6xl text-[#4c4949] font-bold mb-3">
+        Momet of <span className="text-[#cc0000]">Impact</span>
+      </h2>
           </div>
 
           {/* Slider Navigation Buttons */}

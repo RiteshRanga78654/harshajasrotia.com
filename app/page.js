@@ -397,7 +397,7 @@ export default function HomePage() {
       <div className="w-20 h-1 bg-[#cc0000] mx-auto mt-4" />
     </motion.div>
 
-    <div className="grid lg:grid-cols-3 bg-[#cc0000] gap-0 border-5 border-[#000000]">
+    <div className="grid lg:grid-cols-3 bg-[#cc0000] gap-0 border-2 border-[#cc0000]">
       {[
         { step: "01", title: "Strategic Audit", desc: "Granular analysis of sales funnels and operational leakage to find hidden ROI." },
         { step: "02", title: "Cultural Alignment", desc: "Instilling a high-stakes, performance-driven mindset across the organization." },

@@ -104,7 +104,7 @@ const TestimonialSlider = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header with Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 border-b border-gray-100 pb-8">
-          <div className="space-y-2">
+          <div className="space-y-2 px-5">
             <p className="text-[#dc2626] font-bold text-xl tracking-[0.4em] ">
               Testimonials
             </p>

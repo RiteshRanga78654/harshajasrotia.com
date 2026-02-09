@@ -147,14 +147,15 @@ export default function JourneyPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-[#cc0000] font-black text-xs tracking-[0.5em] mb-4 ">
+
+            <p className="text-[#cc0000] font-black text-xl tracking-[0.4em] mb-4 ">
               The Career Narrative
             </p>
             <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-[0.9]">
               The Path of <br />{" "}
               <span className="text-[#cc0000]">Strategic Scale.</span>
             </h1>
-            <p className="text-gray-500 text-lg md:text-xl leading-relaxed max-w-lg font-light ">
+            <p className="text-[#222222] text-lg md:text-xl leading-relaxed max-w-lg font-light ">
               "My journey is defined by a transition from engineering labs to
               the boardroom—applying the same logic to human capital and market
               expansion."
@@ -202,12 +203,16 @@ export default function JourneyPage() {
             ].map((box, i) => (
               <motion.div
                 key={i}
-                whileHover={{ y: -10 }}
+                whileHover={{ y: -5 }}
                 className="bg-[#cc0000] p-10 rounded-3xl shadow-sm border border-gray-100 group transition-all duration-300"
               >
-                <div className="text-[#ffffff] text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <motion.div
+                whileHover={{ rotate: 5 }}
+                    className="text-[#f4f4f4] text-4xl mb-6 flex relative z-10 transition-transform"
+                >
                   {box.icon}
-                </div>
+
+                </motion.div>
                 <h3 className="text-xl font-black mb-4  text-white tracking-tight ">
                   {box.title}
                 </h3>
@@ -225,14 +230,18 @@ export default function JourneyPage() {
           <div className="mb-16">
             <div className="flex items-center gap-4 mb-4">
               <LuImage className="text-[#cc0000] text-2xl" />
-              <span className="text-[#cc0000] font-black text-xs tracking-[0.4em] ">
+              <span className="text-[#cc0000] font-bold text-xl tracking-[0.4em] ">
                 Visual Milestones
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter  ">
+            <h2 className="text-4xl md:text-5xl font-black text-[#222222] tracking-tighter  ">
               Leadership in <span className="text-[#cc0000]">Action</span>
             </h2>
+              <div className="w-20 h-1 bg-[#cc0000] mt-4" />
+
           </div>
+
+          
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-auto md:h-[500px]">
             {galleryImages.map((img, i) => (
@@ -298,11 +307,13 @@ export default function JourneyPage() {
 
       {/* ================= INTERACTIVE JOURNEY (TIMELINE) ================= */}
       <section className="py-20 bg-[#b3b3b3] relative">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-15">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="space-y-2">
             <h2 className="text-4xl md:text-5xl font-black text-[#222222] tracking-tighter  ">
               The <span className="text-[#cc0000]">Trajectory</span>
             </h2>
+                                    <div className="w-20 h-1 bg-[#cc0000] mt-4" />
+
           </div>
 
           <div className="relative">
@@ -352,19 +363,19 @@ export default function JourneyPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-[#F4f4f4] overflow-hidden">
+      <section className="py-24 bg-[#ffffff] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           {/* Heading */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="space-y-2"
           >
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-[#1e1e1e]">
               Strategic <span className="text-[#cc0000]">Arsenal</span>
             </h2>
-            <div className="h-1 w-20 bg-[#cc0000] mx-auto mt-4" />
+            <div className="h-1 w-20 bg-[#cc0000] mt-4 mb-15" />
           </motion.div>
 
           {/* Grid Mapping */}
@@ -403,7 +414,7 @@ export default function JourneyPage() {
                     {skill.icon} {/* <--- Now 'skill' is properly recognized */}
                   </motion.div>
 
-                  <h4 className="font-bold text-white text-sm uppercase tracking-widest mb-2 relative z-10 group-hover:text-[#222222] transition-colors duration-300">
+                  <h4 className="font-bold text-white text-sm uppercase tracking-widest mb-2 relative z-10 transition-colors duration-300">
                     {skill.title}
                   </h4>
 
@@ -421,19 +432,40 @@ export default function JourneyPage() {
       </section>
 
       {/* ================= FINAL CTA ================= */}
-      <section className="py-15 bg-[#111] text-center">
+      <section className="py-15 bg-[#f2f2f2] text-center">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-4xl font-black text-white mb-8 tracking-tighter">
+          <h2 className="text-4xl md:text-5xl font-black text-[#222222] mb-8 tracking-tighter">
             Leadership Through <span className="text-[#cc0000]">Logic</span>
           </h2>
-          <Link
+                      <div className="h-1 w-20 bg-[#cc0000] mx-auto mt-4 mb-5" />
+
+          {/* <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 bg-[#cc0000] text-[#1e1e1e] font-black  tracking-widest px-10 py-4 rounded-full hover:bg-white hover:scale-105 transition-all duration-300"
+            className="group inline-flex items-center gap-2 bg-[#cc0000] text-[#1e1e1e] font-black  tracking-widest px-10 py-4 rounded-full hover:bg-[#b3b3b3] hover:text-[#f4f4f4] hover:scale-105 transition-all duration-300"
           >
             Connect for Strategy{" "}
             <LuChevronRight className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </Link> */}
         </div>
+
+        <div className="mt-10 flex flex-wrap gap-5">
+            <Link
+              href="/contact"
+              className="relative overflow-hidden mx-auto rounded-md border-2 bg-[#cc0000] border-[#ffffff] hover:border-[#cc0000] px-6 py-3 font-semibold text-white group"
+            >
+              <span className="absolute inset-0 w-0 bg-[#ffffff] transition-all duration-300 group-hover:w-full"></span>
+              <span className="relative z-10 group-hover:text-[#cc0000] ">
+                Connect for Strategy 
+              </span>
+            </Link>
+
+            {/* <Link
+              href="/journey"
+              className="px-6 py-3 rounded-md border border-[#ffffff] text-[#ffffff] transition"
+            >
+              View The Journey
+            </Link> */}
+          </div>
       </section>
       <Footer />
     </main>

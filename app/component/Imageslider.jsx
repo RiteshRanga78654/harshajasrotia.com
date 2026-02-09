@@ -44,22 +44,21 @@ export default function EventSlider() {
         
         {/* --- Header Section --- */}
         <div className="flex flex-col md:flex-row justify-between items-end py-8 mb-16 gap-6">
-          <div className="text-left">
-            <p className="text-[10px] tracking-[0.5em] text-emerald-600 font-bold mb-4 uppercase">
-              
-            </p>
-            <h2 className="text-4xl md:text-6xl text-[#4c4949] font-bold mb-3">
-        Momet of <span className="text-[#cc0000]">Impact</span>
-      </h2>
+          
+          <div className="space-y-2 px-5">
+            <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter">
+              Moments of <span className="text-[#dc2626]">Impact.</span>
+            </h2>
+                        <div className="w-20 h-1 bg-[#cc0000] mt-4" />
           </div>
 
           {/* Slider Navigation Buttons */}
           <div className="flex gap-4">
-            <button className="event-prev-btn w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-slate-800 hover:bg-[#022c22] hover:text-white transition-all duration-500 cursor-pointer shadow-sm group">
-              <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
+            <button className="event-prev-btn p-3 md:p-4 rounded-full border border-[#cc0000] text-[#cc0000] hover:bg-[#cc0000] hover:text-white transition-all active:scale-90">
+              <ChevronLeft className="w-6 h-6 transition-colors" />
             </button>
-            <button className="event-next-btn w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-slate-800 hover:bg-[#022c22] hover:text-white transition-all duration-500 cursor-pointer shadow-sm group">
-              <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
+            <button className="event-next-btn p-3 md:p-4 rounded-full border border-[#cc0000] text-[#cc0000] hover:bg-[#cc0000] hover:text-white transition-all active:scale-90">
+              <ChevronRight className="w-6 h-6 transition-colors" />
             </button>
           </div>
         </div>

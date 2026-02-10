@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Link from "next/link";
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   LuPlay, LuImage, LuAward, LuFileDown, LuMic, LuUsers, LuPresentation, LuX 
@@ -59,21 +60,41 @@ export default function MediaGalleryPage() {
            <img src="https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg" className="w-full h-full object-cover" alt="Video Background" />
         </div>
         <div className="absolute inset-0 " />
-        
-        <div className="relative z-10 text-center px-6">
-          <motion.div 
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-[#cc0000] rounded-full text-white text-[10px] font-black tracking-widest  mb-8 shadow-2xl"
-          >
-            <LuPlay size={12} fill="white" /> Press & Media Kit
-          </motion.div>
-          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-8  leading-none">
-            Strategic <span className="text-[#cc0000]">Footprints.</span>
-          </h1>
-          <button className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/20 px-8 py-4 rounded-full text-white font-bold hover:bg-[#cc0000] transition-all">
+          <div className="relative z-20 text-center px-6">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="inline-block px-5 py-2 bg-[#cc0000] text-white text-[10px] font-black tracking-[0.4em]  rounded-full mb-8 shadow-2xl"
+                    >
+                    Press & Media Kit
+                    </motion.div>
+                    <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-10">
+                       Strategic <span className="text-[#cc0000]">Footprints.</span>
+                    </h1>
+                  
+                  <div className=" flex flex-wrap gap-5">
+            <Link
+              href="/contact"
+              className="relative overflow-hidden mx-auto rounded-md border-2 bg-[#cc0000] border-[#ffffff] hover:border-[#cc0000] px-10 py-4 font-semibold text-white group"
+            >
+              <span className="absolute inset-0 w-0 bg-[#ffffff] transition-all duration-300 group-hover:w-full"></span>
+              <span className="relative z-10 group-hover:text-[#cc0000] ">
+               Download Media Bio (PDF)
+              </span>
+            </Link>
+
+            {/* <Link
+              href="/journey"
+              className="px-6 py-3 rounded-md border border-[#ffffff] text-[#ffffff] transition"
+            >
+              View The Journey
+            </Link> */}
+          </div>
+
+
+          {/* <button className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/20 px-8 py-4 rounded-full text-white font-bold hover:bg-[#cc0000] transition-all">
             <LuFileDown /> Download Media Bio (PDF)
-          </button>
+          </button> */}
         </div>
       </section>
 
@@ -92,9 +113,20 @@ export default function MediaGalleryPage() {
       {/* ================= SECTION 2: VIDEO SESSIONS (NEW) ================= */}
       <section className="py-24 bg-[#f2f2f2]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16 border-l-4 border-[#cc0000] pl-6">
+          {/* <div className="mb-16 border-l-4 border-[#cc0000] pl-6">
             <p className="text-[#cc0000] font-black text-xs tracking-[0.4em] mb-2 ">Audio-Visual Archive</p>
             <h2 className="text-4xl md:text-7xl font-black text-[#111827] tracking-tighter ">Sessions & <span className="text-[#cc0000]">Keynotes.</span></h2>
+          </div> */}
+
+          <div className="space-y-2 px-1">
+            <p className="text-[#dc2626] font-bold text-xl tracking-[0.4em] ">
+              Audio-Visual Archive
+            </p>
+            <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter">
+             Sessions & <span className="text-[#dc2626]">Keynotes.</span>
+            </h2>
+                        <div className="w-20 h-1 bg-[#cc0000] mt-4 mb-10" />
+
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -143,9 +175,20 @@ export default function MediaGalleryPage() {
       {/* ================= SECTION 3: THE BENTO GALLERY ================= */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-15 border-r-4 mx-auto border-[#cc0000] ">
+          {/* <div className="mb-15 border-r-4 mx-auto border-[#cc0000] ">
             <p className="text-[#cc0000] font-black text-xs tracking-[0.4em] mb-2 ">Moments of Impact</p>
             <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter ">Pan-India <span className="text-[#cc0000]">Journey.</span></h2>
+          </div> */}
+
+          <div className="space-y-2 px-1">
+            <p className="text-[#dc2626] font-bold text-xl tracking-[0.4em] ">
+              Moments of Impact
+            </p>
+            <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter">
+             Pan-India <span className="text-[#dc2626]">Journey.</span>
+            </h2>
+                        <div className="w-20 h-1 bg-[#cc0000] mt-4 mb-10" />
+
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
@@ -167,11 +210,15 @@ export default function MediaGalleryPage() {
       </section>
 
       {/* ================= SECTION 4: CERTIFICATION WALL ================= */}
-      <section className="py-24 bg-[#f2f2f2] text-white">
+      <section className="py-15 bg-[#f2f2f2] text-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <LuAward className="text-[#cc0000] mx-auto mb-6" size={50} />
-            <h2 className="text-3xl md:text-5xl font-black text-[#222222] tracking-tighter ">Academic & Professional <span className="text-[#cc0000]">Credentials.</span></h2>
+
+          <div className="space-y-2 px-1">
+            <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter">
+             Academic & Professional <br /><span className="text-[#dc2626]">Credentials.</span>
+            </h2>
+            <div className="w-20 h-1 bg-[#cc0000] mt-4 mb-10" />
+
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

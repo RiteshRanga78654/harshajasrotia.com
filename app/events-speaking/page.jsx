@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   LuMic,
@@ -181,11 +182,14 @@ export default function EventsSpeakingPage() {
       </section>
 
       {/* ================= SECTION 3: TOPICS & EXPERTISE ================= */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-black text-[#111827]  tracking-tighter mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-[#111827]  tracking-tighter ">
             Signature <span className="text-[#cc0000]">Keynotes.</span>
           </h2>
+                        <div className="w-20 h-1 bg-[#cc0000] mt-4 mb-10" />
+
+          
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -246,11 +250,13 @@ export default function EventsSpeakingPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-4xl font-black  tracking-tighter mb-8 leading-none">
-                Voices from{" "}
+              <h2 className="text-4xl md:text-5xl font-black  tracking-tighter ">
+                Voices from {" "}<br/>
                 <span className="text-[#cc0000]">The Boardroom.</span>
-              </h3>
-              <div className="space-y-8">
+              </h2>
+              <div className="w-20 h-1 bg-[#cc0000] mt-4 " />
+
+              <div className="space-y-8 mt-8">
                 <p className="text-xl font-light  text-[#f4f4f4]">
                   "Harsha's ability to simplify complex supply chain issues into
                   actionable leadership steps is unmatched. A true strategist."
@@ -271,14 +277,20 @@ export default function EventsSpeakingPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
-              <p className="text-[#cc0000] font-black text-xs tracking-[0.4em] mb-4 ">
-                Thought Leadership
-              </p>
-              <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter ">
-                The <span className="text-[#cc0000]">Chronicles.</span>
-              </h2>
-            </div>
+
+            <div className="space-y-2 px-1">
+            <p className="text-[#dc2626] font-bold text-xl tracking-[0.4em] ">
+            Thought Leadership
+
+            </p>
+            <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter">
+            The <span className="text-[#dc2626]">Chronicles.</span>
+            </h2>
+                        <div className="w-20 h-1 bg-[#cc0000] mt-4" />
+
+          </div>
+
+
             <button className="flex items-center gap-2 font-black text-xs  tracking-widest text-gray-400 hover:text-[#cc0000] transition-colors">
               View All Articles <LuExternalLink size={14} />
             </button>
@@ -325,14 +337,18 @@ export default function EventsSpeakingPage() {
 
       <section className="py-20 bg-[#b3b3b3] text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
-            <p className="text-[#cc0000] font-black text-xs tracking-[0.4em] mb-4 ">
+
+          <div className="space-y-2 px-1">
+            <p className="text-[#dc2626] font-bold text-xl tracking-[0.4em] ">
               Video Archives
             </p>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter ">
-              Sessions in <span className="text-[#cc0000]">Motion.</span>
+            <h2 className="text-4xl md:text-5xl font-black text-[#ffffff] tracking-tighter">
+              Sessions in <span className="text-[#dc2626]">Motion.</span>
             </h2>
+                        <div className="w-20 h-1 bg-[#cc0000] mt-4 mb-10" />
+
           </div>
+
 
           <div className="grid md:grid-cols-3 gap-8">
             {eventVideos.map((video, i) => (
@@ -377,9 +393,10 @@ export default function EventsSpeakingPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20">
           <div>
-            <h2 className="text-4xl font-black  tracking-tighter text-[#222222] mb-8">
-              Initiate <span className="text-[#cc0000]">Engagement.</span>
+             <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter">
+              Initiate <span className="text-[#dc2626]">Engagement.</span>
             </h2>
+            <div className="w-20 h-1 bg-[#cc0000] mt-4 mb-10" />
             <form className="space-y-6">
               <input
                 type="text"
@@ -403,9 +420,29 @@ export default function EventsSpeakingPage() {
                 placeholder="Topic or Theme"
                 className="w-full bg-[#b3b3b3] border-none rounded-[2rem] px-6 py-6 outline-none focus:ring-2 focus:ring-[#cc0000] transition-all resize-none"
               />
-              <button className="w-full py-5 bg-[#cc0000] text-white rounded-2xl font-black  tracking-[0.3em] hover:bg-[#b3b3b3] hover:text-[#222222] transition-all">
+              {/* <button className="w-full py-5 bg-[#cc0000] text-white rounded-2xl font-black  tracking-[0.3em] hover:bg-[#b3b3b3] hover:text-[#222222] transition-all">
                 Submit Inquiry
-              </button>
+              </button> */}
+
+              <div className=" flex flex-wrap gap-5">
+            <Link
+              href="/contact"
+              className="relative overflow-hidden mx-auto rounded-md border-2 bg-[#cc0000] border-[#ffffff] hover:border-[#cc0000] px-10 py-4 font-semibold text-white group"
+            >
+              <span className="absolute inset-0 w-0 bg-[#ffffff] transition-all duration-300 group-hover:w-full"></span>
+              <span className="relative z-10 group-hover:text-[#cc0000] ">
+                Submit Inquiry 
+              </span>
+            </Link>
+
+            {/* <Link
+              href="/journey"
+              className="px-6 py-3 rounded-md border border-[#ffffff] text-[#ffffff] transition"
+            >
+              View The Journey
+            </Link> */}
+          </div>
+
             </form>
           </div>
 

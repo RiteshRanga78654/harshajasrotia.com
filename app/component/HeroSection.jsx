@@ -21,7 +21,7 @@ const HeroSection = () => {
           
           {/* Subtitle */}
           <p className=" tracking-widest text-xl text-[#ffffff] mb-5">
-            COO · IIT Patna · Real Estate Trainer
+            COO at IREED · IIT Patna · Real Estate Trainer
           </p>
 
           {/* Heading */}

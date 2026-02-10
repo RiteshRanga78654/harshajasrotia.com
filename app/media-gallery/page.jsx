@@ -14,7 +14,7 @@ const videoLibrary = [
     category: "Masterclass",
     title: "Strategic Scaling for EdTech",
     description: "A deep dive into operational excellence and pan-India expansion strategies.",
-    thumbnail: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+    thumbnail: "/Harshjasrotia.com/Ritesh/Photos/P_K00113.JPG",
     icon: <LuPresentation />
   },
   {
@@ -22,7 +22,7 @@ const videoLibrary = [
     category: "Interview",
     title: "Future of Real Estate Tech",
     description: "Executive interview discussing digital transformation in the luxury property sector.",
-    thumbnail: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
+    thumbnail: "/Harshjasrotia.com/Ritesh/Photos/P_K00161.JPG",
     icon: <LuMic />
   },
   {
@@ -30,16 +30,16 @@ const videoLibrary = [
     category: "Global Event",
     title: "Leadership Summit 2025",
     description: "Keynote address on mentoring the next generation of corporate leaders.",
-    thumbnail: "https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg",
+    thumbnail: "/Harshjasrotia.com/Ritesh/Photos/DSC02349.JPG",
     icon: <LuUsers />
   }
 ];
 const galleryItems = [
-  { id: 1, type: 'image', size: 'large', title: 'Pan-India Operations Scale', category: 'Growth', src: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg' },
-  { id: 2, type: 'image', size: 'small', title: 'Boardroom Strategy', category: 'Leadership', src: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg' },
-  { id: 3, type: 'image', size: 'small', title: 'EdTech Training Workshop', category: 'Education', src: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg' },
-  { id: 4, type: 'image', size: 'medium', title: 'Real Estate Sales Module', category: 'Real Estate', src: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg' },
-  { id: 5, type: 'image', size: 'small', title: 'Leadership Summit', category: 'Impact', src: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
+  { id: 1, type: 'image', size: 'large', title: 'Pan-India Operations Scale', category: 'Growth', src: '/Harshjasrotia.com/Ritesh/Photos/P_K00144.JPG' },
+  { id: 2, type: 'image', size: 'small', title: 'Boardroom Strategy', category: 'Leadership', src: '/Harshjasrotia.com/Ritesh/Photos/DSC02314.JPG' },
+  { id: 3, type: 'image', size: 'small', title: 'EdTech Training Workshop', category: 'Education', src: '/Harshjasrotia.com/Ritesh/Photos/DSC02352.JPG' },
+  { id: 4, type: 'image', size: 'medium', title: 'Real Estate Sales Module', category: 'Real Estate', src: '/Harshjasrotia.com/Ritesh/Photos/DSC02368.JPG' },
+  { id: 5, type: 'image', size: 'small', title: 'Leadership Summit', category: 'Impact', src: '/Harshjasrotia.com/Ritesh/Photos/P_K00191.JPG' },
 ];
 
 const certificates = [
@@ -57,9 +57,9 @@ export default function MediaGalleryPage() {
     <main className="bg-white min-h-screen">
       <section className="relative h-[60vh] md:h-[80vh]  flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-90">
-           <img src="https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg" className="w-full h-full object-cover" alt="Video Background" />
+           <img src="/Harshjasrotia.com/Ritesh/Photos/DSC02216.JPG" className="w-full h-full object-cover" alt="Video Background" />
         </div>
-        <div className="absolute inset-0 " />
+        <div className="absolute inset-0 bg-black/30" />
           <div className="relative z-20 text-center px-6">
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -111,7 +111,7 @@ export default function MediaGalleryPage() {
       </section> */}
 
       {/* ================= SECTION 2: VIDEO SESSIONS (NEW) ================= */}
-      <section className="py-24 bg-[#f2f2f2]">
+      <section className="py-20 bg-[#f2f2f2]">
         <div className="max-w-7xl mx-auto px-6">
           {/* <div className="mb-16 border-l-4 border-[#cc0000] pl-6">
             <p className="text-[#cc0000] font-black text-xs tracking-[0.4em] mb-2 ">Audio-Visual Archive</p>
@@ -138,7 +138,7 @@ export default function MediaGalleryPage() {
               >
                 {/* Thumbnail Wrapper */}
                 <div className="relative h-64 overflow-hidden">
-                  <img src={video.thumbnail} alt={video.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                  <img src={video.thumbnail} alt={video.title} className="w-full h-full object-cover  transition-all duration-700" />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all" />
                   
                   {/* Play Button Overlay */}
@@ -173,7 +173,7 @@ export default function MediaGalleryPage() {
       </section>
 
       {/* ================= SECTION 3: THE BENTO GALLERY ================= */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           {/* <div className="mb-15 border-r-4 mx-auto border-[#cc0000] ">
             <p className="text-[#cc0000] font-black text-xs tracking-[0.4em] mb-2 ">Moments of Impact</p>
@@ -198,7 +198,7 @@ export default function MediaGalleryPage() {
                 whileHover={{ scale: 0.98 }}
                 className={`relative rounded-[2rem] overflow-hidden group shadow-lg ${item.size === 'large' ? 'md:col-span-2 md:row-span-2' : 'md:col-span-1'}`}
               >
-                <img src={item.src} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" />
+                <img src={item.src} className="w-full h-full object-cover  transition-all duration-1000" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all p-8 flex flex-col justify-end">
                   <h4 className="text-white font-black text-lg  tracking-widest">{item.title}</h4>
                   <p className="text-[#cc0000] text-[10px] font-bold tracking-[0.3em]  mt-2">{item.category}</p>

@@ -94,9 +94,9 @@ const highlights = [
 
 const partners = [
   { name: "IREED", src: "/images/Ireed-Logo (1).png" },
-  { name: "Shiksha", src: "/images/shiksha-logo.jfif" },
-  { name: "IIT Patna", src: "/images/iit-patna-logo.png" },
-  { name: "Career Launcher", src: "/images/career-launcher-logo.png" },
+  { name: "Lodha", src: "/images/lodha logo.png" },
+    { name: "Shiksha", src: "/Harshjasrotia.com/Ritesh/Photos/2.png" },
+  { name: "Career Launcher", src: "/Harshjasrotia.com/Ritesh/Photos/1.png" },
   { name: "M3M", src: "/images/m3m.png" },
 ];
 
@@ -289,7 +289,7 @@ export default function HomePage() {
                   <img
                     src={partner.src}
                     alt={partner.name}
-                    style={{ borderRadius: "50%" }}
+                    style={{ borderRadius: "40%" }}
                     className="max-w-full max-h-full  object-contain filter  group-hover:grayscale-0 transition-all duration-300"
                   />
                 </div>
@@ -403,7 +403,7 @@ export default function HomePage() {
                     Harsha Jasrotia
                   </p>
                   <p className="text-[#cc0000] text-xs font-mono  tracking-widest mt-1">
-                    COO · IIT Patna Alum · Strategic Advisor
+                    COO at IREED· IIT Patna Alum · Strategic Advisor
                   </p>
                 </div>
               </div>

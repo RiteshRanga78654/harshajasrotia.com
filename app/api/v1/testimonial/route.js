@@ -80,4 +80,4 @@ export const GET = async (request) => {
     } catch (error) {
         return jsonResponse({ error: error.message }, 500);
     }
-};
+}; 

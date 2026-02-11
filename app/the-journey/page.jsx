@@ -139,7 +139,7 @@ export default function JourneyPage() {
   return (
     <main className="bg-[#F8F9FA] text-[#1e1e1e] overflow-hidden min-h-screen">
       {/* ================= HERO: THE ORIGIN ================= */}
-      <section className="relative py-15 md:py-20 bg-white border-b border-gray-100 overflow-hidden">
+      <section className="relative py-15 md:py-20 bg-white border-b h-[80vh] border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 md:gap-20 items-center relative z-10">
           <motion.div
             initial={{ opacity: 0, x: -30 }}

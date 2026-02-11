@@ -114,7 +114,7 @@ export default function MediaGalleryPage() {
       {/* ================= AUDIO-VISUAL ARCHIVE ================= */}
       <section className="py-20 bg-[#f2f2f2]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="space-y-2 px-5">
+          <div className="space-y-2 px-1">
             <p className="text-[#dc2626] font-bold text-xl tracking-[0.4em]">Audio-Visual Archive</p>
             <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter">
              Sessions & <span className="text-[#dc2626]">Keynotes.</span>
@@ -166,7 +166,7 @@ export default function MediaGalleryPage() {
       <section className="py-20 bg-white font-sans">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
-        <div className="space-y-2 px-5">
+        <div className="space-y-2 px-1">
             <p className="text-[#dc2626] font-bold text-xl tracking-[0.4em]">Moments of Impact</p>
             <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter">
              Pan-India <span className="text-[#dc2626]">Journey.</span>

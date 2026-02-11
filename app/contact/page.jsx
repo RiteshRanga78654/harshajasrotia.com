@@ -44,7 +44,7 @@ export default function ContactPage() {
     <main className="bg-white min-h-screen selection:bg-[#cc0000] selection:text-white">
       
       {/* ================= SECTION 1: EXECUTIVE HERO ================= */}
-      <section className="relative pt-32 pb-20 bg-[#cc0000] overflow-hidden">
+      <section className="relative pt-32 pb-20 h-[80vh] bg-[#cc0000] overflow-hidden">
         {/* Animated background glow */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-black/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4" />
         

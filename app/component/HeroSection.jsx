@@ -1,61 +1,62 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
+  // Correct paths: No "public" in the string!
+  const mobileImg = "/Harshjasrotia.com/Ritesh/Photos/DSC02368.JPG";
+  const desktopImg = "/Harshjasrotia.com/Ritesh/Photos/P_K00144.JPG";
+  
+  const [bgImage, setBgImage] = useState(mobileImg);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setBgImage(desktopImg);
+      } else {
+        setBgImage(mobileImg);
+      }
+    };
+
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section
-      className="relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: "url('/Harshjasrotia.com/Ritesh/Photos/Screenshot 2026-02-06 170558.png')",
-      }}
+      className="relative min-h-[80vh] flex items-center bg-cover bg-center bg-no-repeat transition-all duration-700"
+      style={{ backgroundImage: `url('${bgImage}')` }}
     >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/30"></div>
+      {/* Dark Overlay for readability */}
+      <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Gold Gradient Accent */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#b79662]/20 via-transparent to-transparent"></div>
-
-      <div className="relative z-10 max-w-7xl  px-6 md:px-10">
-        <div className="max-w-3xl">
-          
-          {/* Subtitle */}
-          <p className=" tracking-widest text-xl text-[#ffffff] mb-5">
+      <div className="relative z-10 max-w-7xl px-9 md:px-23">
+        <div className="max-w-3xl text-white">
+          <p className="tracking-widest text-lg md:text-xl mb-5 uppercase font-medium">
             COO at IREED · IIT Patna · Real Estate Trainer
           </p>
 
-          {/* Heading */}
-          <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight text-white">
+          <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight">
             Driving Strategic
             <br />
             <span className="text-[#ffffff]">Growth & Execution</span>
           </h1>
 
-          {/* Description */}
-          <p className="mt-6 text-lg text-[#f4f4f4] leading-relaxed">
+          <p className="mt-6 text-lg text-[#f4f4f4] leading-relaxed max-w-2xl">
             Harsha Jasrotia is a Sales & Marketing leader with 20+ years of
-            experience across EdTech and Real Estate, helping organizations
-            build scalable revenue systems and high-performance teams.
+            experience across EdTech and Real Estate.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="mt-10 flex flex-wrap gap-5">
+          <div className="mt-10">
             <Link
               href="/contact"
-              className="relative overflow-hidden rounded-md border-2 border-[#ffffff] px-6 py-3 font-semibold text-white group"
+              className="relative overflow-hidden rounded-md border-2 border-white px-8 py-4 font-semibold group inline-block"
             >
               <span className="absolute inset-0 w-0 bg-[#cc0000] transition-all duration-300 group-hover:w-full"></span>
-              <span className="relative z-10 group-hover:text-[#ffffff]">
-                Get In Touch
-              </span>
+              <span className="relative z-10">Get In Touch</span>
             </Link>
-
-            {/* <Link
-              href="/journey"
-              className="px-6 py-3 rounded-md border border-[#ffffff] text-[#ffffff] transition"
-            >
-              View The Journey
-            </Link> */}
           </div>
         </div>
       </div>

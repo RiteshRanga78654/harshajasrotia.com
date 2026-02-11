@@ -98,7 +98,7 @@ export default function EventsSpeakingPage() {
       </section>
 
       {/* ================= SECTION 2: DUAL-BIO & DOWNLOADS ================= */}
-      <section className="py-24 bg-[#fcfcfc]">
+      {/* <section className="py-24 bg-[#fcfcfc]">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-8">
             <div className="flex gap-8 mb-8 border-b border-gray-100">
@@ -139,10 +139,10 @@ export default function EventsSpeakingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ================= SECTION 1: HERO (UVP & HEADSHOT) ================= */}
-      <section className="relative pt-20 pb-20 bg-[#b3b3b3] overflow-hidden">
+      {/* <section className="relative pt-20 pb-20 bg-[#b3b3b3] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -179,7 +179,7 @@ export default function EventsSpeakingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ================= SECTION 3: TOPICS & EXPERTISE ================= */}
       <section className="py-20 bg-white">

@@ -33,6 +33,7 @@ export default function RootLayout({ children }) {
         {<ConditionalHeader />}
         {children}
         {/* <Footer /> */}
+        <WhatsAppButton />
       </body>
     </html>
   );

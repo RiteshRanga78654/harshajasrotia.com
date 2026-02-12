@@ -97,7 +97,10 @@ const partners = [
   { name: "Lodha", src: "/images/lodha logo.png" },
     { name: "Shiksha", src: "/Harshjasrotia.com/Ritesh/Photos/2.png" },
   { name: "Career Launcher", src: "/Harshjasrotia.com/Ritesh/Photos/1.png" },
-  { name: "M3M", src: "/images/m3m.png" },
+  { name: "infoedge", src: "/Harshjasrotia.com/Ritesh/Photos/infoedge.jfif" },
+  { name: "phoenix", src: "/Harshjasrotia.com/Ritesh/Photos/phoenix logo.png" },
+  { name: "squareyard", src: "/Harshjasrotia.com/Ritesh/Photos/squareyards logo.webp" },
+
 ];
 
 export default function HomePage() {
@@ -168,7 +171,7 @@ export default function HomePage() {
 
       <HeroSection />
       {/* ================= STATS ================= */}
-      <section className="py-10 bg-[#cc0000]">
+      <section className="py-10 bg-[#cc0000] border-t border-white">
         <div className="max-w-7xl bg-[#cc0000] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
           {[
             ["20+", "Years Experience"],
@@ -212,7 +215,7 @@ export default function HomePage() {
             <div className="w-20 h-1 bg-[#cc0000] mt-4 mb-8" />
           </div>
 
-          {/* Added a 6th card "Operational Excellence" to balance the grid */}
+          {/* Added a 6th card "Operational Excellence" to balanceling the grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             <Feature icon={FaChartLine} title="Revenue Growth">
               Building predictable and scalable revenue systems.
@@ -264,40 +267,56 @@ export default function HomePage() {
   </div>
 </section> */}
 
-      <section className="py-10 bg-[#f4f4f4] md:mx-auto ">
-        <div className="container mx-auto px-4">
-          {/* Logo Flex Container */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-center text-2xl  tracking-[0.5em] text-[#cc0000] mb-12 font-semibold"
+      <section className="py-20 bg-[#f4f4f4] overflow-hidden border-y border-gray-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center text-xl md:text-2xl tracking-[0.4em] text-[#cc0000] mb-16 font-semibold"
+        >
+          Scaling Impact Across Industry Titans.
+        </motion.p>
+
+        {/* Slider Container */}
+        <div className="relative flex overflow-hidden">
+          <motion.div
+            className="flex gap-12 items-center"
+            animate={{
+              x: ["0%", "-50%"], // Moves halfway because the list is duplicated
+            }}
+            transition={{
+              duration: 25, // Adjust speed here (higher = slower)
+              ease: "linear",
+              repeat: Infinity,
+            }}
           >
-            Strategic Leadership & Partnerships
-          </motion.p>
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
-            {partners.map((partner, index) => (
+            {/* We render the list twice to create the infinite loop effect */}
+            {[...partners, ...partners].map((partner, index) => (
               <div
                 key={index}
-                className="group relative flex items-center justify-center 
-                         w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 
-                         rounded-full border border-gray-100 shadow-sm 
-                         bg-white transition-all duration-300 ease-in-out 
-                         hover:shadow-xl hover:-translate-y-2 hover:border-blue-100"
+                className="flex-shrink-0 group relative flex items-center justify-center 
+                           w-40 h-40 md:w-52 md:h-52 rounded-full border border-gray-100 
+                           bg-white shadow-sm transition-all duration-500
+                           hover:shadow-2xl hover:border-[#cc0000]/20"
               >
-                {/* Logo Wrapper for Padding */}
-                <div className="w-3/4 h-3/4 flex items-center justify-center ">
+                <div className="w-2/3 h-2/3 flex items-center justify-center">
                   <img
                     src={partner.src}
                     alt={partner.name}
-                    style={{ borderRadius: "40%" }}
-                    className="max-w-full max-h-full  object-contain filter  group-hover:grayscale-0 transition-all duration-300"
+                    className="max-w-full max-h-full object-contain  transition-all duration-700"
                   />
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
+
+          {/* Gradient Overlays for smooth fade-in/out effect */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f4f4f4] to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#f4f4f4] to-transparent z-10" />
         </div>
-      </section>
+      </div>
+    </section>
 
       <section className="py-20 bg-[#b3b3b3] relative overflow-hidden">
         {/* Background Decorative Text */}

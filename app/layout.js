@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import ConditionalHeader from "./ConditionalHeader";
+import WhatsAppButton from "./component/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

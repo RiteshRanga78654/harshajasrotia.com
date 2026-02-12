@@ -87,7 +87,7 @@ const highlights = [
   {
     title: "IIT Mentorship",
     category: "Strategy & Logic",
-    img: "/Harshjasrotia.com/Ritesh/Photos/P_K00141 - Copy.JPG",
+    img: "/Harshjasrotia.com/Ritesh/Photos/P_K00141.JPG",
     stat: "Academic ",
   },
 ];
@@ -339,7 +339,7 @@ export default function HomePage() {
               <div className="absolute -top-4 -left-3 md:-top-6 md:-left-6 w-24 h-24 md:w-32 md:h-32 border-t-2 border-l-2 border-[#cc0000] z-10" />
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
                 <Image
-                  src="/Harshjasrotia.com/Ritesh/Photos/DSC02338.JPG" // Use the same top-aligned professional image
+                  src="/Harshjasrotia.com/Ritesh/Photos/DSC02197.JPG" // Use the same top-aligned professional image
                   alt="Harsha Jasrotia - Chief Operating Officer"
                   fill
                   className="object-cover object-top scale-x-[-1]  hover:scale-105 transition-transform duration-700"

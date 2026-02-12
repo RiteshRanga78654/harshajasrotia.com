@@ -4,7 +4,7 @@ import path from "path";
 
 export const runtime = "nodejs";
 
-const UPLOAD_DIR = path.join(process.cwd(), "upload");
+const UPLOAD_DIR = path.join(process.cwd(), "public", "upload");
 const MAX_FILES = 10;
 const ALLOWED_MIME_TYPES = new Set([
 	"image/jpeg",

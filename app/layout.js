@@ -1,7 +1,10 @@
+"use client";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
+import ConditionalHeader from "./ConditionalHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,18 +16,21 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Harsha Jasrotia",
-  description: "Transforming the Real Estate Landscape through 20+ Years of Strategic Excellence.",
-};
+// export const metadata = {
+//   title: "Harsha Jasrotia",
+//   description: "Transforming the Real Estate Landscape through 20+ Years of Strategic Excellence.",
+// };
 
 export default function RootLayout({ children }) {
+
+
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
+        {<ConditionalHeader />}
         {children}
         {/* <Footer /> */}
       </body>

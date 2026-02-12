@@ -2,49 +2,62 @@ import path from "path";
 import { promises as fs } from "fs";
 import { NextResponse } from "next/server";
 
-export const runtime = 'nodejs';
-export const dynamic = 'force-dynamic';
-
 export async function GET(request, { params }) {
   try {
-    const id = params?.getimage;
-    
-    // Validate image ID
-    if (!id || id === 'undefined' || id === 'null') {
-      console.error('[IMAGE API] Invalid image ID:', id);
-      return NextResponse.json(
-        { error: 'Invalid image ID provided' },
-        { status: 400 }
-      );
+    // 1. AWAIT params (Crucial for Next.js 15+)
+
+    const { getimage: id } = await params;
+    // console.log("[IMAGE API] Requested ID:", id); // Debug log for incoming ID
+    // 2. Validate ID
+
+    if (!id || id === "undefined" || id === "null") {
+      return NextResponse.json({ error: "Invalid image ID" }, { status: 400 });
     }
 
-    const imagePath = path.join(process.cwd(), "/public/uploads", id);
-    console.log('[IMAGE API] Attempting to read image:', imagePath);
+    // 3. SECURE PATH CONSTRUCTING
 
-    // Check if file exists
+    // Use path.join without a leading slash on 'public' to ensure it's relative to project root
+
+    const imagePath = path.join(process.cwd(), "public", "upload", id);
+    // console.log("[IMAGE API] Resolved Path:", imagePath);
+    // 4. CHECK IF FILE EXISTS
+
     try {
       await fs.access(imagePath);
-    } catch (error) {
-      console.error('[IMAGE API] Image not found:', imagePath);
-      return NextResponse.json(
-        { error: 'Image not found' },
-        { status: 404 }
-      );
+    } catch {
+      return NextResponse.json({ error: "Image not found" }, { status: 404 });
     }
 
+    // 5. READ AND RETURN
+
     const imageBuffer = await fs.readFile(imagePath);
-    const response = new NextResponse(imageBuffer, {
+
+    // Optional: Determine extension to set correct Content-Type
+
+    const ext = path.extname(imagePath).toLowerCase();
+
+    const contentType = ext === ".png" ? "image/png" : "image/jpeg";
+
+    return new NextResponse(imageBuffer, {
       headers: {
-        "Content-Type": "image/jpeg"
+        "Content-Type": contentType,
+
+        "Cache-Control": "public, max-age=31536000, immutable",
       },
     });
-    return response;
   } catch (error) {
-    console.error('[IMAGE API] Error reading image:', error);
+    // 6. SAFE ERROR LOGGING
+
+    console.error("[IMAGE API] Error:", error);
+
     return NextResponse.json(
-      { error: 'Failed to load image', details: error.message },
-      { status: 500 }
+      {
+        error: "Failed to load image",
+
+        details: error instanceof Error ? error.message : "Unknown error",
+      },
+
+      { status: 500 },
     );
   }
 }
-

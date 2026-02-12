@@ -44,9 +44,9 @@ export default function ContactPage() {
     <main className="bg-white min-h-screen selection:bg-[#cc0000] selection:text-white">
       
       {/* ================= SECTION 1: EXECUTIVE HERO ================= */}
-      <section className="relative pt-32 pb-20 bg-[#cc0000] overflow-hidden">
+      {/* <section className="relative pt-32 pb-20 h-[80vh] bg-[#cc0000] overflow-hidden">
         {/* Animated background glow */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-black/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4" />
+        {/* <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-black/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4" />
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div
@@ -62,6 +62,19 @@ export default function ContactPage() {
               Available for strategic advisory, board positions, and high-stakes mentorship for the next generation of leaders.
             </p>
           </motion.div>
+        </div>
+      </section>  */}
+
+      <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-90">
+          <img src="/Harshjasrotia.com/Ritesh/Photos/DSC02328.JPG" className="w-full h-full object-cover" alt="Media Background" />
+        </div>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-20 text-center px-6">
+          <h1 className="text-5xl md:text-8xl font-black text-white tracking-tight leading-none mt-20 mb-10 ">Let's Build <span className="text-[#cc0000]">Impact.</span></h1>
+          <p className="text-white max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
+           Available for strategic advisory, board positions, and high-stakes mentorship for the next generation of leaders.
+          </p>
         </div>
       </section>
 

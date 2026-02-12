@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import React, { useState } from "react";
@@ -17,12 +15,11 @@ import "swiper/css/effect-coverflow";
 const events = [
   { id:1 , src: "/Harshjasrotia.com/Ritesh/Photos/P_K00191.JPG", title: "Strategic Leadership" },
   { id:2 , src: "/Harshjasrotia.com/Ritesh/Photos/DSC02207.JPG", title: "Real Estate Training" },
-  { id:3 , src: "/Harshjasrotia.com/Ritesh/Photos/P_K00120.JPG", title: "EdTech Innovation" },
+  { id:3 , src: "/Harshjasrotia.com/Ritesh/Photos/DSC02194.JPG", title: "EdTech Innovation" },
   { id:4 , src: "/Harshjasrotia.com/Ritesh/Photos/DSC02368.JPG", title: "Operational Scale" },
   { id:5 , src: "/Harshjasrotia.com/Ritesh/Photos/DSC02284.JPG", title: "Real Estate Training" },
-  { id:6 , src: "/Harshjasrotia.com/Ritesh/Photos/Screenshot 2026-02-06 171507.png", title: "EdTech Innovation" },
-  { id:7 , src: "/Harshjasrotia.com/Ritesh/Photos/P_K00141 - Copy.JPG", title: "Operational Scale" },
-
+  { id:6 , src: "/Harshjasrotia.com/Ritesh/Photos/DSC02338.JPG", title: "EdTech Innovation" },
+  { id:7 , src: "/Harshjasrotia.com/Ritesh/Photos/P_K00120.JPG", title: "Operational Scale" },
 ];
 export default function EventSlider() {
   const [activeImg, setActiveImg] = useState(null);
@@ -71,7 +68,7 @@ export default function EventSlider() {
           centeredSlides={true}
           slidesPerView={"auto"}
           loop={true}
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,

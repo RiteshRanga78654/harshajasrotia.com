@@ -180,7 +180,7 @@ export default function TestimonialPage() {
   return (
     <main className="bg-[#fcfcfc] min-h-screen font-sans selection:bg-[#cc0000] selection:text-white">
       {/* HERO SECTION */}
-      <section className="relative pt-40 pb-24 bg-[#cc0000] min-h-[80vh] flex items-center overflow-hidden">
+      {/* <section className="relative pt-40 pb-24 bg-[#cc0000] min-h-[80vh] flex items-center overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#cc0000]/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4" />
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <motion.p
@@ -203,6 +203,21 @@ export default function TestimonialPage() {
             the leaders we've mentored along the way.
           </p>
         </div>
+      </section> */}
+
+
+       <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-90">
+          <img src="/Harshjasrotia.com/Ritesh/Photos/20260108_172637.jpg" className="w-full h-full object-cover" alt="Media Background" />
+        </div>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-20 text-center px-6">
+          <h1 className="text-5xl md:text-8xl font-black text-white tracking-tight leading-none mt-45 mb-10 ">Voices of <span className="text-[#cc0000]">Trust.</span></h1>
+          <p className="text-white max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
+            A legacy built on results, strategic integrity, and the success of
+            the leaders we've mentored along the way.
+          </p>
+        </div>
       </section>
 
       {/* INDUSTRY ENDORSEMENTS SECTION */}
@@ -217,6 +232,8 @@ export default function TestimonialPage() {
                 Industry <br />
                 <span className="text-[#cc0000]">Endorsements.</span>
               </h2>
+              <div className="w-20 h-1 bg-[#cc0000] mt-4 mb-8" />
+
             </div>
             
           </div>
@@ -267,6 +284,8 @@ export default function TestimonialPage() {
                 Student <br />
                 <span className="text-[#cc0000]">Success.</span>
               </h2>
+              <div className="w-20 h-1 bg-[#cc0000] mt-4 mb-8" />
+
             </div>
            
           </div>

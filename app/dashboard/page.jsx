@@ -89,7 +89,7 @@ export default function Dashboard() {
         <nav className="space-y-2">
           <SidebarItem href="/dashboard" icon={<LayoutDashboard size={20}/>} label="Overview" open={sidebarOpen} />
           <SidebarItem href="/dashboard/events" icon={<Calendar size={20}/>} label="Events" open={sidebarOpen} />
-          <SidebarItem href="/dashboard/profile" icon={<User size={20}/>} label="Settings" open={sidebarOpen} />
+          <SidebarItem href="/dashboard/blog" icon={<User size={20}/>} label="Blog" open={sidebarOpen} />
         </nav>
 
         <button

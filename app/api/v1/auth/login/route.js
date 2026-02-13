@@ -24,7 +24,7 @@ export async function POST(request) {
       );
     }
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || "sdfghjhkjllnkbjhgfdnfg7iu6tyret5wa5w6e7rtuyfvhjyutdrsxfhgc", {
       expiresIn: "7d",
     });
 

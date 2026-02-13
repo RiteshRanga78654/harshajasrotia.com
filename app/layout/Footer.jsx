@@ -122,10 +122,10 @@ const Footer = () => {
               </h3>
 
               {/* Newsletter Button */}
-              <button
+              {/* <button
                 style={{
                   padding: "6px 10px",
-                  backgroundColor: "#b79662",
+                  backgroundColor: "#cc0000",
                   borderRadius: "8px",
                   color: "#fff",
                   fontSize: "12px",
@@ -135,17 +135,17 @@ const Footer = () => {
                   gap: "10px",
                   position: "relative",
                   overflow: "hidden",
-                  border: "2px solid #b79662",
+                  border: "2px solid #ffffff",
                   letterSpacing: "1px",
                   transition: "all 0.3s ease",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.querySelector(".hover-fill").style.width = "100%";
-                  e.currentTarget.querySelector(".btn-text").style.color = "#b79662";
+                  e.currentTarget.querySelector(".btn-text").style.color = "#ffffff";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.querySelector(".hover-fill").style.width = "0%";
-                  e.currentTarget.querySelector(".btn-text").style.color = "#fff";
+                  e.currentTarget.querySelector(".btn-text").style.color = "#ffffff";
                 }}
               >
                 <div
@@ -164,7 +164,31 @@ const Footer = () => {
                 <span className="btn-text relative z-10">
                   Join Our Newsletter
                 </span>
-              </button>
+              </button> */}
+
+               <div className="mt-6 md:mt-0">
+  <a 
+    href="/contact" 
+    className="relative group overflow-hidden flex  gap-2 border-2 border-[#ffffff] text-[#ffffff] px-10 py-3 rounded-2xl font-black text-[11px] tracking-[0.1em] transition-all duration-500"
+  >
+    {/* Sliding Background Layer */}
+    <span className="absolute inset-0 w-0 bg-[#ffffff] transition-all duration-500 group-hover:w-full"></span>
+
+    {/* Content Container (z-10 to stay above the sliding background) */}
+    <span className="relative z-10 flex gap-2 group-hover:text-[#cc0000] transition-colors duration-500 ">
+       Join Our Newsletter
+      {/* <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        className="h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke="currentColor"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg> */}
+    </span>
+  </a>
+</div>
 
               {/* Social Icons */}
               <div className="flex flex-wrap gap-2 mt-6 relative z-30">

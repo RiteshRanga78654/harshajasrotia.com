@@ -99,19 +99,19 @@ const skills = [
 
 const galleryImages = [
   {
-    url: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+    url: "/Harshjasrotia.com/Ritesh/Photos/2copyjourneyimg.JPG",
     title: "Strategic Planning",
   },
   {
-    url: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg",
+    url: "/Harshjasrotia.com/Ritesh/Photos/DSC02288.JPG",
     title: "Team Leadership",
   },
   {
-    url: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+    url: "/Harshjasrotia.com/Ritesh/Photos/DSC02209.JPG",
     title: "Corporate Excellence",
   },
   {
-    url: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg",
+    url: "/Harshjasrotia.com/Ritesh/Photos/copyjourneyimg.JPG",
     title: "Market Expansion",
   },
 ];
@@ -147,7 +147,6 @@ export default function JourneyPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-
             <p className="text-[#cc0000] font-black text-xl tracking-[0.4em] mb-4 ">
               The Career Narrative
             </p>
@@ -179,95 +178,7 @@ export default function JourneyPage() {
           </motion.div>
         </div>
       </section>
-
-      {/* ================= EXECUTIVE DEPTH SECTION ================= */}
-      <section className="py-20 bg-[#F2F2F2]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <LuChartBar />,
-                title: "Data Rigor",
-                text: "Moving beyond intuition to leverage raw data for pan-India expansion.",
-              },
-              {
-                icon: <LuCpu />,
-                title: "Systems Thinking",
-                text: "Engineering workflows that eliminate bottlenecks in high-speed sales teams.",
-              },
-              {
-                icon: <LuZap />,
-                title: "Velocity",
-                text: "Scaling from 0 to 100+ cities by optimizing lead-to-conversion cycles.",
-              },
-            ].map((box, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -5 }}
-                className="bg-[#cc0000] p-10 rounded-3xl shadow-sm border border-gray-100 group transition-all duration-300"
-              >
-                <motion.div
-                whileHover={{ rotate: 5 }}
-                    className="text-[#f4f4f4] text-4xl mb-6 flex relative z-10 transition-transform"
-                >
-                  {box.icon}
-
-                </motion.div>
-                <h3 className="text-xl font-black mb-4  text-white tracking-tight ">
-                  {box.title}
-                </h3>
-                <p className="text-[#f4f4f4] text-sm leading-relaxed">
-                  {box.text}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
-            <div className="flex items-center gap-4 mb-4">
-              <LuImage className="text-[#cc0000] text-2xl" />
-              <span className="text-[#cc0000] font-bold text-xl tracking-[0.4em] ">
-                Visual Milestones
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-[#222222] tracking-tighter  ">
-              Leadership in <span className="text-[#cc0000]">Action</span>
-            </h2>
-              <div className="w-20 h-1 bg-[#cc0000] mt-4" />
-
-          </div>
-
-          
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-auto md:h-[500px]">
-            {galleryImages.map((img, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ flex: 2 }}
-                transition={{ duration: 0.5, ease: "circOut" }}
-                className="relative overflow-hidden rounded-3xl group cursor-pointer flex-1 h-[300px] md:h-full border border-gray-100"
-              >
-                <img
-                  src={img.url}
-                  alt={img.title}
-                  className="w-full h-full object-cover transition-all duration-700 scale-110 group-hover:scale-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                  <p className="text-white font-black text-xl  tracking-tighter">
-                    {img.title}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-10 bg-[#cc0000] border-y border-gray-100 overflow-hidden">
+      <section className="py-10 bg-[#cc0000] border-t border-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
             {stats.map((stat, i) => (
@@ -312,8 +223,7 @@ export default function JourneyPage() {
             <h2 className="text-4xl md:text-5xl font-black text-[#222222] tracking-tighter  ">
               The <span className="text-[#cc0000]">Trajectory</span>
             </h2>
-                                    <div className="w-20 h-1 bg-[#cc0000] mt-4" />
-
+            <div className="w-20 h-1 bg-[#cc0000] mt-4" />
           </div>
 
           <div className="relative">
@@ -362,8 +272,8 @@ export default function JourneyPage() {
           </div>
         </div>
       </section>
-
-      <section className="py-24 bg-[#ffffff] overflow-hidden">
+      {/* ================= EXECUTIVE DEPTH SECTION ================= */}
+      <section className="py-20 bg-[#ffffff] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           {/* Heading */}
           <motion.div
@@ -431,13 +341,52 @@ export default function JourneyPage() {
         </div>
       </section>
 
+      <section className="pb-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-16">
+            <div className="flex items-center gap-4 mb-4">
+              <LuImage className="text-[#cc0000] text-2xl" />
+              <span className="text-[#cc0000] font-bold text-xl tracking-[0.4em] ">
+                Visual Milestones
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-[#222222] tracking-tighter  ">
+              Leadership in <span className="text-[#cc0000]">Action</span>
+            </h2>
+            <div className="w-20 h-1 bg-[#cc0000] mt-4" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-auto md:h-[500px]">
+            {galleryImages.map((img, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ flex: 2 }}
+                transition={{ duration: 0.5, ease: "circOut" }}
+                className="relative overflow-hidden rounded-3xl group cursor-pointer flex-1 h-[300px] md:h-full border border-gray-100"
+              >
+                <img
+                  src={img.url}
+                  alt={img.title}
+                  className="w-full h-full object-cover transition-all duration-700 scale-110 group-hover:scale-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                  <p className="text-white font-black text-xl  tracking-tighter">
+                    {img.title}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ================= FINAL CTA ================= */}
       <section className="py-15 bg-[#f2f2f2] text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-black text-[#222222] mb-8 tracking-tighter">
             Leadership Through <span className="text-[#cc0000]">Logic</span>
           </h2>
-                      <div className="h-1 w-20 bg-[#cc0000] mx-auto mt-4 mb-5" />
+          <div className="h-1 w-20 bg-[#cc0000] mx-auto mt-4 mb-5" />
 
           {/* <Link
             href="/contact"
@@ -449,23 +398,23 @@ export default function JourneyPage() {
         </div>
 
         <div className="mt-10 flex flex-wrap gap-5">
-            <Link
-              href="/contact"
-              className="relative overflow-hidden mx-auto rounded-md border-2 bg-[#cc0000] border-[#ffffff] hover:border-[#cc0000] px-6 py-3 font-semibold text-white group"
-            >
-              <span className="absolute inset-0 w-0 bg-[#ffffff] transition-all duration-300 group-hover:w-full"></span>
-              <span className="relative z-10 group-hover:text-[#cc0000] ">
-                Connect for Strategy 
-              </span>
-            </Link>
+          <Link
+            href="/contact"
+            className="relative overflow-hidden mx-auto rounded-xl border-2 bg-[#ffffff] border-[#cc0000] px-6 py-3 font-semibold text-[#cc0000] group"
+          >
+            <span className="absolute inset-0 w-0 bg-[#cc0000] transition-all duration-300 group-hover:w-full"></span>
+            <span className="relative z-10 group-hover:text-[#ffffff] ">
+              Connect for Strategy
+            </span>
+          </Link>
 
-            {/* <Link
+          {/* <Link
               href="/journey"
               className="px-6 py-3 rounded-md border border-[#ffffff] text-[#ffffff] transition"
             >
               View The Journey
             </Link> */}
-          </div>
+        </div>
       </section>
       <Footer />
     </main>

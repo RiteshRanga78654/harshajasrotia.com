@@ -92,17 +92,22 @@ const HarshaGridSection = () => {
 
         {/* Load More Button */}
         {visibleCount < projects.length && (
-          <div className="mt-20 flex justify-center">
+          <div className="mt-20 flex flex-wrap gap-5">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={loadMore}
-              className="flex items-center gap-3 bg-[#111827] text-white px-10 py-5 rounded-full font-bold tracking-widest text-xs uppercase shadow-xl hover:bg-[#dc2626] transition-colors duration-300"
+            className="relative overflow-hidden mx-auto rounded-xl border-2 bg-[#ffffff] border-[#cc0000]  px-10 py-5 font-semibold text-[#cc0000] group"
             >
-              <Plus size={18} />
-              Load More Milestones
+                          <span className="absolute inset-0 w-0 bg-[#cc0000] transition-all duration-300 group-hover:w-full"></span>
+
+            <span className="relative z-10 group-hover:text-[#ffffff] ">
+            Load More Milestones</span>  
             </motion.button>
           </div>
+
+
+          
         )}
       </div>
     </section>

@@ -172,10 +172,12 @@ export default function HomePage() {
       <HeroSection />
       {/* ================= STATS ================= */}
       <section className="py-10 bg-[#cc0000] border-t border-white">
-        <div className="max-w-7xl bg-[#cc0000] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+        <div className="max-w-full bg-[#cc0000] mx-auto px-6 grid grid-cols-2 md:grid-cols-6 gap-12 text-center">
           {[
             ["20+", "Years Experience"],
             ["EdTech", "Industry"],
+            ["50+", "Workshops Done"], 
+            ["20+", "Lives Impacted"],
             ["Real Estate", "Industry"],
             ["Pan India", "Leadership"],
           ].map(([num, label], i) => (
@@ -596,7 +598,7 @@ export default function HomePage() {
           {/* Header */}
           <div className="mb-24">
 
-            <p className="text-[#cc0000] font-bold text-xl tracking-[0.4em] mb-6">
+            <p className="text-[#cc0000] font-bold text-xl tracking-[0.4em] mb-3">
                 MILESTONES
               </p>
               <h2 className="text-4xl md:text-5xl font-black text-white tracking-trighter">
@@ -610,7 +612,7 @@ export default function HomePage() {
 
           <div className="relative">
             {/* Vertical Line Container */}
-            <div className="absolute left-0 md:left-12 top-0 bottom-0 w-[1px] bg-white/10">
+            <div className="absolute left-0 md:left-12 top-0 bottom-0 w-[2px] bg-white/10">
               {/* Animated Progress Line on Scroll */}
               <motion.div
                 initial={{ height: 0 }}
@@ -632,7 +634,7 @@ export default function HomePage() {
                   className="relative pl-12 md:pl-32"
                 >
                   {/* Connector Dot */}
-                  <div className="absolute left-[-5px] md:left-[43px] top-2 w-[11px] h-[11px] bg-[#cc0000] rounded-full z-10 shadow-[0_0_10px_#b79662]" />
+                  <div className="absolute left-[-5px] md:left-[43px] top-2 w-[13px] h-[13px] bg-[#cc0000] rounded-full z-10 shadow-[0_0_10px_#b79662]" />
 
                   <div className="grid md:grid-cols-[200px_1fr] gap-4 md:gap-20">
                     {/* Year Column */}
@@ -647,7 +649,7 @@ export default function HomePage() {
 
                     {/* Content Column */}
                     <div className="max-w-2xl">
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight ">
+                      <h3 className="text-2xl md:text-4xl font-bold text-white mb-2 tracking-tight ">
                         {step.role}
                       </h3>
                       <p className="text-[#cc0000] font-semibold text-sm mb-6 tracking-widest ">
@@ -710,20 +712,18 @@ export default function HomePage() {
                 </div>
 
                 {/* Floating Content Box */}
-                <div className="absolute -bottom-6 left-6 right-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100">
-                  <span className="text-[#cc0000] text-[10px] font-black  tracking-[0.2em]">
+                <div className="absolute -bottom-6 left-6 text-center right-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100">
+                  <span className="text-[#cc0000] text-[12px] font-black  tracking-[0.2em]">
                     {item.category}
                   </span>
                   <h3 className="text-xl font-bold mt-2 group-hover:text-[#cc0000] transition-colors">
                     {item.title}
                   </h3>
-                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
+                  <div className=" text-center mt-4 pt-4 border-t border-gray-50">
                     <span className="text-4xl font-black text-gray-300">
                       {item.stat}
                     </span>
-                    <span className="text-gray-900 font-bold group-hover:translate-x-2 transition-transform">
-                      →
-                    </span>
+                    
                   </div>
                 </div>
               </motion.div>
@@ -733,33 +733,7 @@ export default function HomePage() {
       </section>
 
       {/* ================= TESTIMONIAL ================= */}
-      <section className="py-20 bg-[#f4f4f4] overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative text-center"
-          >
-            <span className="text-8xl text-[#cc0000]/20 font-serif absolute -top-12 left-0">
-              “
-            </span>
-            <h2 className="text-2xl md:text-3xl leading-relaxed text-[#222222] relative z-10">
-              Harsha possesses a rare blend of operational discipline and
-              visionary thinking. His ability to build Pan-India sales engines
-              from scratch is unparalleled in the EdTech space.
-            </h2>
-            <div className="mt-10">
-              <div className="font-bold text-[#b3b3b3] text-lg">
-                Former CEO / Board Member
-              </div>
-              <div className="text-[#cc0000] text-sm  tracking-widest mt-1">
-                Top-Tier EdTech Organization
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      
       <Footer />
     </main>
   );

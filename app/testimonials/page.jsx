@@ -115,7 +115,7 @@ const studetTestimonials = [
 // --- SUB-COMPONENT: TESTIMONIAL CARD ---
 const TestimonialCard = ({ item }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const wordLimit = 30;
+  const wordLimit = 20;
   const description = item?.description || "";
   const isLongText = description.split(" ").length > wordLimit;
 
@@ -125,7 +125,7 @@ const TestimonialCard = ({ item }) => {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="relative bg-white pt-24 pb-10 px-8 rounded-[3.5rem] border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] transition-all duration-500 group flex flex-col h-full mt-12"
+      className="relative bg-white pt-24 pb-10 px-8 rounded-[2.5rem] border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] transition-all duration-500 group flex flex-col h-100 mt-12"
     >
       <div className="absolute -top-12 left-1/2 -translate-x-1/2 md:left-12 md:translate-x-0">
         <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-[2.5rem] overflow-hidden border-4 border-white shadow-2xl transition-transform duration-700 group-hover:scale-105">
@@ -205,25 +205,52 @@ export default function TestimonialPage() {
         </div>
       </section> */}
 
-
-       <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-90">
-          <img src="/Harshjasrotia.com/Ritesh/Photos/20260108_172637.jpg" className="w-full h-full object-cover" alt="Media Background" />
+          <img
+            src="/Harshjasrotia.com/Ritesh/Photos/20260108_172637.jpg"
+            className="w-full h-full object-cover"
+            alt="Media Background"
+          />
         </div>
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-20 text-center px-6">
-          <h1 className="text-5xl md:text-8xl font-black text-white tracking-tight leading-none mt-45 mb-10 ">Voices of <span className="text-[#cc0000]">Trust.</span></h1>
+          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight leading-none mt-45 mb-10 ">
+            Voices of <span className="text-[#cc0000]">Trust.</span>
+          </h1>
           <p className="text-white max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
             A legacy built on results, strategic integrity, and the success of
             the leaders we've mentored along the way.
           </p>
         </div>
       </section>
-
+      <section className="py-10 bg-[#cc0000] border-t border-white">
+        <div className="max-w-full bg-[#cc0000] mx-auto px-6 grid grid-cols-2 md:grid-cols-6 gap-12 text-center">
+          {[
+            ["98%", "Client Satisfaction"],
+      ["50+", "Workshops Hosted"],
+      ["25k+", "Success Stories"],
+      ["150+", "Corporate Partners"],
+      ["Pan India", "Service Reach"],
+      ["24/7", "Dedicated Support"],
+          ].map(([num, label], i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <h3 className="text-3xl font-bold text-[#f4f4f4]">{num}</h3>
+              <p className="mt-2 text-[#f4f4f4]">{label}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
       {/* INDUSTRY ENDORSEMENTS SECTION */}
-      <section className="py-24 bg-[#f9f9f9]">
+      <section className="py-20 bg-[#f9f9f9]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-20 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-8">
+          {/* <div className=" text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">
               <p className="text-[#cc0000] font-black text-xs tracking-[0.6em] mb-4 ">
                 Executive Network
@@ -233,14 +260,12 @@ export default function TestimonialPage() {
                 <span className="text-[#cc0000]">Endorsements.</span>
               </h2>
               <div className="w-20 h-1 bg-[#cc0000] mt-4 mb-8" />
-
             </div>
-            
-          </div>
+          </div> */}
 
           <motion.div
             layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-24"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12"
           >
             <AnimatePresence mode="popLayout">
               {studetTestimonials.slice(0, industryCount).map((item) => (
@@ -260,7 +285,7 @@ export default function TestimonialPage() {
             <div className="mt-24 text-center">
               <button
                 onClick={() => setIndustryCount((prev) => prev + 3)}
-                className="relative overflow-hidden rounded-md border-2 border-[#cc0000] px-8 py-4 font-semibold group text-[#cc0000] hover:text-white inline-block"
+                className="relative overflow-hidden rounded-xl border-2 border-[#cc0000] px-8 py-4 font-semibold group text-[#cc0000] hover:text-white inline-block"
               >
                 <span className="absolute inset-0 w-0 bg-[#cc0000] transition-all duration-300 group-hover:w-full group-hover:text-[#ffffff] "></span>
                 <span className="relative z-10">
@@ -273,9 +298,9 @@ export default function TestimonialPage() {
       </section>
 
       {/* STUDENT SUCCESS SECTION (Unified Padding/Margins) */}
-      <section className="py-24 bg-[#f2f2f2]">
+      <section className="py-20 bg-[#f2f2f2]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-20 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className=" text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">
               <p className="text-[#cc0000] font-black text-xs tracking-[0.6em] mb-4 ">
                 Mentorship Legacy
@@ -285,14 +310,12 @@ export default function TestimonialPage() {
                 <span className="text-[#cc0000]">Success.</span>
               </h2>
               <div className="w-20 h-1 bg-[#cc0000] mt-4 mb-8" />
-
             </div>
-           
           </div>
 
           <motion.div
             layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-24"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12"
           >
             <AnimatePresence mode="popLayout">
               {studetTestimonials.slice(0, studentCount).map((student) => (
@@ -325,7 +348,7 @@ export default function TestimonialPage() {
             <div className="mt-24 text-center">
               <button
                 onClick={() => setStudentCount((prev) => prev + 3)}
-                className="relative overflow-hidden rounded-md border-2 border-[#cc0000] px-8 py-4 font-semibold group text-[#cc0000] hover:text-white inline-block"
+                className="relative overflow-hidden rounded-xl border-2 border-[#cc0000] px-8 py-4 font-semibold group text-[#cc0000] hover:text-white inline-block"
               >
                 <span className="absolute inset-0 w-0 bg-[#cc0000] transition-all duration-300 group-hover:w-full group-hover:text-[#ffffff] "></span>
                 <span className="relative z-10">

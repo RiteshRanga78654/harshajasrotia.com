@@ -14,7 +14,7 @@ export default function BlogPage() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/v1/blog");
+        const response = await fetch("/api/v1/blog");
         const data = await response.json();
 
         // Since your response is a direct array [ {...} ]

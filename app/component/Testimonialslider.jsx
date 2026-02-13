@@ -293,17 +293,47 @@ const TestimonialSlider = () => {
 
   return (
     <section className="bg-white pt-20 pb-10 px-4 sm:px-6 lg:px-16 w-full overflow-hidden">
-      <div className="max-w-7xl mx-auto">
         {/* Header - Buttons Removed from here */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-100 pb-8">
-          <div className="space-y-2 px-5">
-            <p className="text-[#dc2626] font-bold text-xl tracking-[0.4em]">Testimonials</p>
-            <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter">
-              Voices of <span className="text-[#dc2626]">Impact.</span>
-            </h2>
-            <div className="w-20 h-1 bg-[#cc0000] mt-4" />
-          </div>
-        </div>
+        
+      <div className="max-w-7xl mx-auto">
+  {/* Header Container */}
+  <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b border-gray-100 pb-8 px-5">
+    
+    {/* Left Side: Text Content */}
+    <div className="space-y-2">
+      <p className="text-[#dc2626] font-bold text-xl tracking-[0.4em] uppercase">Testimonials</p>
+      <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tighter">
+        Voices of <span className="text-[#dc2626]">Impact.</span>
+      </h2>
+      <div className="w-20 h-1 bg-[#cc0000] mt-4" />
+    </div>
+
+    {/* Right Side: View All Button */}
+    <div className="mt-6 md:mt-0">
+  <a 
+    href="/testimonials" 
+    className="relative group overflow-hidden flex items-center gap-2 border-2 border-[#cc0000] text-[#cc0000] px-8 py-3 rounded-2xl font-black text-[14px] tracking-[0.2em] transition-all duration-500 shadow-lg hover:shadow-[#cc0000]/20"
+  >
+    {/* Sliding Background Layer */}
+    <span className="absolute inset-0 w-0 bg-[#cc0000] transition-all duration-500 group-hover:w-full"></span>
+
+    {/* Content Container (z-10 to stay above the sliding background) */}
+    <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-500 uppercase">
+      View All Stories
+      {/* <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        className="h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke="currentColor"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg> */}
+    </span>
+  </a>
+</div>
+
+</div>
 
         {/* Slider Track Container - Added relative and padding for buttons */}
         <div 

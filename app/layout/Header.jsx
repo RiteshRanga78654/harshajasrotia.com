@@ -24,7 +24,7 @@ export default function Header() {
             <nav className="hidden md:flex items-center gap-10">
               <NavItem href="/" label="Home" />
               <NavItem href="/testimonials" label="Testimonials" />
-              {/* <NavItem href="/the-journey" label="The Journey" /> */}
+              <NavItem href="/the-journey" label="The Journey" />
               {/* <NavItem href="/strategic-insights" label="Strategic Insights" /> */}
               <NavItem href="/workshops" label="Workshops" />
               <NavItem href="/my-blogs" label="My Blogs" />

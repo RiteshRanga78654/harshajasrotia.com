@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Trash2, Edit3, Save, X, Upload, MessageSquare, User, FileText, Link as LinkIcon, Calendar, Briefcase } from 'lucide-react';
 
-const API_BASE = "http://localhost:3000/api/v1/blog";
+const API_BASE = "/api/v1/blog";
 const UPLOAD_API = "/api/v1/file/upload";
 const IMAGE_GET_API = "/api/v1/file/imageGet";
 

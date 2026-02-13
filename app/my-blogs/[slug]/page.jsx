@@ -24,7 +24,7 @@ export default function BlogPost() {
   const fetchPost = async () => {
     try {
       console.log("1. Fetching started for slug:", slug);
-      const response = await fetch("http://localhost:3000/api/v1/blog");
+      const response = await fetch("/api/v1/blog");
       const data = await response.json();
       
       console.log("2. Total blogs received from API:", data.length);

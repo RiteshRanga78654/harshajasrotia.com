@@ -49,10 +49,10 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[70vh] md:h-[83vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-90">
           <img
-            src="https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg"
+            src="/Harshjasrotia.com/Ritesh/Photos/myblogbg.JPG"
             className="w-full h-full object-cover"
             alt="Stage background"
           />
@@ -60,14 +60,8 @@ export default function BlogPage() {
         <div className="absolute inset-0 z-10" />
 
         <div className="relative z-20 text-center px-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-block px-5 py-2 bg-[#cc0000] text-white text-[10px] font-black tracking-[0.4em] rounded-full mb-8 shadow-2xl"
-          >
-            Voice of Authority
-          </motion.div>
-          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-10">
+          
+          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mt-50 mb-10">
             The Executive <span className="text-[#cc0000]">Stage.</span>
           </h1>
           <p className="max-w-2xl mx-auto text-[#f4f4f4] text-lg md:text-xl font-light leading-relaxed">
@@ -76,6 +70,29 @@ export default function BlogPage() {
           </p>
         </div>
       </section>
+      <section className="py-10 bg-[#cc0000] border-t border-white">
+              <div className="max-w-full bg-[#cc0000] mx-auto px-6 grid grid-cols-2 md:grid-cols-6 gap-12 text-center">
+                {[
+                  ["98%", "Client Satisfaction"],
+            ["50+", "Workshops Hosted"],
+            ["25k+", "Success Stories"],
+            ["150+", "Corporate Partners"],
+            ["Pan India", "Service Reach"],
+            ["24/7", "Dedicated Support"],
+                ].map(([num, label], i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <h3 className="text-3xl font-bold text-[#f4f4f4]">{num}</h3>
+                    <p className="mt-2 text-[#f4f4f4]">{label}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
 
       {/* Blog Grid Section */}
       <div className="min-h-screen bg-gray-100 p-6 md:p-12">

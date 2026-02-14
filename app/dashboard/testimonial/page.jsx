@@ -125,7 +125,7 @@ export default function TestimonialsDashboard() {
             onClick={() => openModal()}
             className="px-5 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition"
           >
-            + Add Testimonial
+            + Add Testimonial H
           </button>
         </div>
 

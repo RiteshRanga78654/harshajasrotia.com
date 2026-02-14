@@ -52,7 +52,7 @@ export default function BlogPost() {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#cc0000]"></div>
       </div>
     );
   }
@@ -61,7 +61,7 @@ export default function BlogPost() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50">
         <h2 className="text-2xl font-bold mb-4">Post not found</h2>
-        <Link href="/blog" className="text-indigo-600 flex items-center">
+        <Link href="/blog" className="text-[#cc0000] flex items-center">
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Blogs
         </Link>
       </div>
@@ -71,13 +71,13 @@ export default function BlogPost() {
   return (
     <div className="min-h-screen bg-slate-50 selection:bg-indigo-100">
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1.5 bg-indigo-600 origin-left z-50"
+        className="fixed top-0 left-0 right-0 h-1.5 bg-[#cc0000] origin-left z-50"
         style={{ scaleX }}
       />
 
       <nav className="sticky top-0 bg-white/80 backdrop-blur-md z-40 border-b border-slate-200">
-        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/blog" className="flex items-center text-slate-600 hover:text-indigo-600 transition-colors">
+        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+          <Link href="/blog" className="flex items-center text-slate-600 hover:text-[#cc0000] transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" />
             <span className="font-medium text-sm">Back to Blogs</span>
           </Link>
@@ -87,14 +87,14 @@ export default function BlogPost() {
         </div>
       </nav>
 
-      <main className="max-w-4xl mx-auto px-6 py-12">
+      <main className="max-w-5xl mx-auto px-6 py-12">
         <motion.header 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="space-y-6 mb-12"
         >
           <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 font-medium">
-            <span className="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full">
+            <span className="px-3 py-1 bg-indigo-50 text-[#cc0000] rounded-full">
               {post.category || "General"}
             </span>
             <div className="flex items-center">
@@ -136,7 +136,7 @@ export default function BlogPost() {
           >
             {/* Description/Excerpt Section */}
             {(post.excerpt || post.description) && (
-              <p className="text-xl text-slate-600 leading-relaxed font-light mb-12 border-l-4 border-indigo-500 pl-6 py-2 bg-indigo-50/30">
+              <p className="text-xl text-slate-600 leading-relaxed font-light mb-12 border-l-4 border-[#cc0000] pl-6 py-2 bg-indigo-50/30">
                 {post.excerpt || post.description}
               </p>
             )}
@@ -163,7 +163,7 @@ export default function BlogPost() {
                     >
                       <span className="font-semibold text-slate-800">{item.q}</span>
                       <motion.div animate={{ rotate: openFaq === idx ? 180 : 0 }}>
-                        <ChevronDown className="w-5 h-5 text-indigo-500" />
+                        <ChevronDown className="w-5 h-5 text-[#cc0000]" />
                       </motion.div>
                     </button>
                     <motion.div 
@@ -183,13 +183,13 @@ export default function BlogPost() {
 
           <motion.footer 
             whileHover={{ scale: 1.01 }}
-            className="mt-20 p-8 md:p-12 rounded-[2.5rem] bg-[#1e2d7d] text-white flex flex-col md:flex-row items-center justify-between gap-8"
+            className="mt-20 p-8 md:p-12 rounded-[2.5rem] bg-[#cc0000] text-white flex flex-col md:flex-row items-center justify-between gap-8"
           >
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-bold mb-2">Want to learn more?</h3>
               <p className="text-indigo-200">Contact our experts for a personalized consultation.</p>
             </div>
-            <button className="px-10 py-4 bg-white text-[#1e2d7d] rounded-full font-bold text-lg hover:shadow-xl hover:shadow-indigo-500/20 transition-all active:scale-95">
+            <button className="px-10 py-4 bg-white text-[#cc0000] rounded-full font-bold text-lg hover:shadow-xl hover:shadow-indigo-500/20 transition-all active:scale-95">
               Get Started
             </button>
           </motion.footer>

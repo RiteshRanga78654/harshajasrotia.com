@@ -7,7 +7,7 @@ export default function ConditionalHeader() {
   const pathname = usePathname();
 
   // Define routes that should NOT have a header
-  const hideHeaderRoutes = ["/login", "/dashboard"];
+  const hideHeaderRoutes = ["/login", "/dashboard" ,"my-blogs"];
   
   // Check if current path matches or starts with these routes
   const shouldHide = hideHeaderRoutes.some(route => pathname?.startsWith(route));

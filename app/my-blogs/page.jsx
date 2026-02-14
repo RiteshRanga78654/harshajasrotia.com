@@ -1,37 +1,55 @@
-"use client"; // Required for useState and click events
+"use client";
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function BlogPage() {
-  // Your original data (Note: I kept your 6 items)
-  const allBlogs = [
-    { id: 1, category: "REAL ESTATE", image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000", title: "Online vs Offline Real Estate Courses in India", excerpt: "Real estate has become a skill-oriented profession where formal education has a significant influence on career building...", author: "Priyanka Aggarwal", date: "January 7, 2026" },
-    { id: 2, category: "REAL ESTATE", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000", title: "Real Estate Course in India vs Overseas: What You Should Know", excerpt: "The real estate business has become a professionalized profession everywhere. From residential sales and commercial leasing...", author: "Priyanka Aggarwal", date: "December 30, 2025" },
-    { id: 3, category: "REAL ESTATE", image: "https://images.unsplash.com/photo-1454165833767-027ffea9e778?q=80&w=1000", title: "RERA Certification: Eligibility, Training, Exam & Key Benefits", excerpt: "The RERA certification is increasingly becoming essential to real estate professionals who need credible credentials...", author: "Priyanka Aggarwal", date: "December 12, 2025" },
-    { id: 4, category: "REAL ESTATE", image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000", title: "Online vs Offline Real Estate Courses in India", excerpt: "Real estate has become a skill-oriented profession where formal education has a significant influence on career building...", author: "Priyanka Aggarwal", date: "January 7, 2026" },
-    { id: 5, category: "REAL ESTATE", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000", title: "Real Estate Course in India vs Overseas: What You Should Know", excerpt: "The real estate business has become a professionalized profession everywhere. From residential sales and commercial leasing...", author: "Priyanka Aggarwal", date: "December 30, 2025" },
-    { id: 6, category: "REAL ESTATE", image: "https://images.unsplash.com/photo-1454165833767-027ffea9e778?q=80&w=1000", title: "RERA Certification: Eligibility, Training, Exam & Key Benefits", excerpt: "The RERA certification is increasingly becoming essential to real estate professionals who need credible credentials...", author: "Priyanka Aggarwal", date: "December 12, 2025" },
-    // Adding extra dummy items so you can see the "Load More" work
-    { id: 7, category: "REAL ESTATE", image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000", title: "New Trends in Real Estate 2026", excerpt: "Exploring the shift towards sustainable architecture and smart home integration in urban developments...", author: "Priyanka Aggarwal", date: "January 15, 2026" },
-    { id: 8, category: "REAL ESTATE", image: "https://images.unsplash.com/photo-1582408921715-18e7806365c1?q=80&w=1000", title: "Investing in Commercial Property", excerpt: "Commercial real estate offers different risks and rewards compared to residential markets. Here is what to look for...", author: "Priyanka Aggarwal", date: "February 1, 2026" },
-    { id: 9, category: "REAL ESTATE", image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1000", title: "Urban vs Suburban: Where to Buy?", excerpt: "Deciding between the city center and the quiet suburbs is a major hurdle for first-time home buyers in 2026...", author: "Priyanka Aggarwal", date: "February 10, 2026" }
-  ];
-
-  // Logic: State to track how many items to show
+  const [allBlogs, setAllBlogs] = useState([]);
   const [visibleCount, setVisibleCount] = useState(6);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const IMAGE_GET_API = "/api/v1/file/imageGet";
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/v1/blog");
+        const data = await response.json();
+
+        // Since your response is a direct array [ {...} ]
+        setAllBlogs(Array.isArray(data) ? data : []);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
 
   const handleLoadMore = () => {
     setVisibleCount((prevCount) => prevCount + 3);
   };
 
-  // Slice the array based on state
   const displayedBlogs = allBlogs.slice(0, visibleCount);
+
+  // Helper to get initials from the author name object
+  const getInitials = (authorObj) => {
+    if (!authorObj?.name) return "A";
+    return authorObj.name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()
+      .slice(0, 2);
+  };
 
   return (
     <>
-     <section className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
-        {/* Cinematic Video/Image Loop Background */}
+      {/* Hero Section */}
+      <section className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-90">
           <img
             src="https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg"
@@ -39,13 +57,13 @@ export default function BlogPage() {
             alt="Stage background"
           />
         </div>
-        <div className="absolute inset-0  z-10" />
+        <div className="absolute inset-0 z-10" />
 
         <div className="relative z-20 text-center px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-block px-5 py-2 bg-[#cc0000] text-white text-[10px] font-black tracking-[0.4em]  rounded-full mb-8 shadow-2xl"
+            className="inline-block px-5 py-2 bg-[#cc0000] text-white text-[10px] font-black tracking-[0.4em] rounded-full mb-8 shadow-2xl"
           >
             Voice of Authority
           </motion.div>
@@ -58,77 +76,96 @@ export default function BlogPage() {
           </p>
         </div>
       </section>
-    <div className="min-h-screen bg-gray-100 p-6 md:p-12 ">
-      <div className="mx-auto max-w-6xl">
-        
-        {/* Responsive Grid */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {displayedBlogs.map((blog) => (
-            <div 
-              key={blog.id} 
-              className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-            >
-              {/* FIXED IMAGE SECTION */}
-              <div className="relative h-52 w-full shrink-0 overflow-hidden bg-gray-200">
-                <img 
-                  src={blog.image} 
-                  alt={blog.title} 
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute left-4 top-4 rounded-full bg-[#2d368e] px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider">
-                  {blog.category}
-                </div>
-              </div>
 
-              {/* Content Section */}
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="mb-3 line-clamp-2 text-lg font-bold leading-tight text-slate-800 min-h-[3rem]">
-                  {blog.title}
-                </h3>
-                
-                <p className="mb-6 line-clamp-3 text-sm leading-relaxed text-gray-500">
-                  {blog.excerpt}
-                </p>
-
-                <div className="mt-auto flex items-center gap-3 border-t border-gray-100 pt-5">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1d4ed8] text-xs font-bold text-white shadow-sm">
-                    {blog.author.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  
-                  <div className="flex flex-col">
-                    <span className="text-xs font-bold text-slate-800">{blog.author}</span>
-                    <span className="text-[10px] text-gray-400 font-medium">{blog.date}</span>
-                  </div>
-                </div>
-
-                <button className="mt-6 w-full rounded-lg bg-[#2d368e] py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#1e2563] sm:w-fit sm:px-8">
-                  Read Full Blog
-                </button>
-              </div>
+      {/* Blog Grid Section */}
+      <div className="min-h-screen bg-gray-100 p-6 md:p-12">
+        <div className="mx-auto max-w-6xl">
+          {isLoading ? (
+            <div className="flex justify-center items-center py-20">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#2d368e]"></div>
             </div>
-          ))}
+          ) : (
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {displayedBlogs.map((blog) => (
+                <div
+                  key={blog._id}
+                  className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                >
+                  {/* Image Section */}
+                  {/* Image Section */}
+                  <div className="relative h-52 w-full shrink-0 overflow-hidden bg-gray-200">
+                    <img
+                      // We append the filename from the JSON to your API endpoint
+                      src={`${IMAGE_GET_API}/${blog.image}`}
+                      alt={blog.title}
+                      className="h-full w-full object-cover"
+                      // This helps if the specific image file is missing on the server
+                      onError={(e) => {
+                        e.target.src =
+                          "https://via.placeholder.com/400x300?text=Image+Not+Found";
+                      }}
+                    />
+                    <div className="absolute left-4 top-4 rounded-full bg-[#2d368e] px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider">
+                      {blog.category}
+                    </div>
+                  </div>
+                  {/* Content Section */}
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="mb-3 line-clamp-2 text-lg font-bold leading-tight text-slate-800 min-h-[3rem]">
+                      {blog.title}
+                    </h3>
+
+                    <p className="mb-6 line-clamp-3 text-sm leading-relaxed text-gray-500">
+                      {blog.excerpt}
+                    </p>
+
+                    <div className="mt-auto flex items-center gap-3 border-t border-gray-100 pt-5">
+                      {/* Author Avatar with Initials */}
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1d4ed8] text-xs font-bold text-white shadow-sm">
+                        {getInitials(blog.author)}
+                      </div>
+
+                      <div className="flex flex-col">
+                        <span className="text-xs font-bold text-slate-800">
+                          {blog.author?.name || "Anonymous"}
+                        </span>
+                        <span className="text-[10px] text-gray-400 font-medium">
+                          {new Date(blog.date).toLocaleDateString("en-US", {
+                            month: "short",
+                            day: "numeric",
+                            year: "numeric",
+                          })}
+                        </span>
+                      </div>
+                    </div>
+
+                    <Link href={`/my-blogs/${blog.slug}`}>
+                      <button className="mt-6 w-full rounded-lg bg-[#2d368e] py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#1e2563] sm:w-fit sm:px-8">
+                        Read Full Blog
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Load More Button */}
+          {!isLoading && visibleCount < allBlogs.length && (
+            <div className="mt-12 flex justify-center">
+              <button
+                onClick={handleLoadMore}
+                className="rounded-full bg-white border-2 border-[#2d368e] px-10 py-3 text-sm font-bold text-[#2d368e] transition-all hover:bg-[#2d368e] hover:text-white active:scale-95 shadow-sm"
+              >
+                Load More
+              </button>
+            </div>
+          )}
         </div>
-
-        {/* LOAD MORE BUTTON */}
-        {visibleCount < allBlogs.length && (
-          <div className="mt-12 flex justify-center">
-            <button 
-              onClick={handleLoadMore}
-              className="rounded-full bg-white border-2 border-[#2d368e] px-10 py-3 text-sm font-bold text-[#2d368e] transition-all hover:bg-[#2d368e] hover:text-white active:scale-95 shadow-sm"
-            >
-              Load More
-            </button>
-          </div>
-        )}
-
       </div>
-    </div>
     </>
   );
 }
-
-
-
 // "use client";
 
 // import React, { useState } from 'react';
@@ -185,7 +222,7 @@ export default function BlogPage() {
 //       </section>
 
 //       {/* BLOG SECTION WITH FIXED BACKGROUND */}
-//       <div 
+//       <div
 //         className="relative min-h-screen bg-fixed bg-cover bg-center py-12 px-6 md:px-12"
 //         style={{ backgroundImage: `url('/unnamed.jpg')` }}
 //       >
@@ -195,15 +232,15 @@ export default function BlogPage() {
 //         <div className="relative z-10 mx-auto max-w-6xl">
 //           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 //             {displayedBlogs.map((blog) => (
-//               <div 
-//                 key={blog.id} 
+//               <div
+//                 key={blog.id}
 //                 className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-full"
 //               >
 //                 {/* Fixed Image height */}
 //                 <div className="relative h-52 w-full shrink-0 overflow-hidden bg-gray-200">
-//                   <img 
-//                     src={blog.image} 
-//                     alt={blog.title} 
+//                   <img
+//                     src={blog.image}
+//                     alt={blog.title}
 //                     className="h-full w-full object-cover"
 //                   />
 //                   <div className="absolute left-4 top-4 rounded-full bg-[#2d368e] px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider">
@@ -217,7 +254,7 @@ export default function BlogPage() {
 //                   <h3 className="mb-3 text-lg font-bold leading-tight text-slate-800 line-clamp-2 md:h-[3rem]">
 //                     {blog.title}
 //                   </h3>
-                  
+
 //                   <p className="mb-6 text-sm leading-relaxed text-gray-500 line-clamp-3">
 //                     {blog.excerpt}
 //                   </p>
@@ -226,7 +263,7 @@ export default function BlogPage() {
 //                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1d4ed8] text-xs font-bold text-white shadow-sm">
 //                       {blog.author.split(' ').map(n => n[0]).join('')}
 //                     </div>
-                    
+
 //                     <div className="flex flex-col">
 //                       <span className="text-xs font-bold text-slate-800">{blog.author}</span>
 //                       <span className="text-[10px] text-gray-400 font-medium">{blog.date}</span>
@@ -244,7 +281,7 @@ export default function BlogPage() {
 //           {/* CUSTOM LOAD MORE UI (Matching your Image) */}
 //           <div className="mt-20 flex flex-col items-center gap-4">
 //             {visibleCount < totalBlogs && (
-//               <button 
+//               <button
 //                 onClick={handleLoadMore}
 //                 className="rounded-full bg-[#2d368e] px-12 py-4 text-white font-bold text-lg transition-all hover:bg-[#1e2563] active:scale-95 shadow-xl w-full max-w-md"
 //               >

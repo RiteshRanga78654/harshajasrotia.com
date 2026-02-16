@@ -49,10 +49,10 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[70vh] md:h-[83vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-90">
           <img
-            src="https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg"
+            src="/Harshjasrotia.com/Ritesh/Photos/myblogbg.JPG"
             className="w-full h-full object-cover"
             alt="Stage background"
           />
@@ -60,14 +60,8 @@ export default function BlogPage() {
         <div className="absolute inset-0 z-10" />
 
         <div className="relative z-20 text-center px-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-block px-5 py-2 bg-[#cc0000] text-white text-[10px] font-black tracking-[0.4em] rounded-full mb-8 shadow-2xl"
-          >
-            Voice of Authority
-          </motion.div>
-          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-10">
+          
+          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mt-50 mb-10">
             The Executive <span className="text-[#cc0000]">Stage.</span>
           </h1>
           <p className="max-w-2xl mx-auto text-[#f4f4f4] text-lg md:text-xl font-light leading-relaxed">
@@ -76,13 +70,50 @@ export default function BlogPage() {
           </p>
         </div>
       </section>
+       <section className="py-10 bg-[#cc0000] border-t border-white">
+              <div className="max-w-full bg-[#cc0000] mx-auto px-6 grid grid-cols-2 md:grid-cols-6 gap-12 text-center">
+                {[
+                  ["98%", "Client Satisfaction"],
+            ["50+", "Workshops Hosted"],
+            ["25k+", "Success Stories"],
+            ["150+", "Corporate Partners"],
+            ["Pan India", "Service Reach"],
+            ["24/7", "Dedicated Support"],
+                ].map(([num, label], i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <h3 className="text-3xl font-bold text-[#f4f4f4]">{num}</h3>
+                    <p className="mt-2 text-[#f4f4f4]">{label}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
 
+<div className="max-w-7xl mx-auto px-6">
+          <div className=" text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div className="max-w-2xl mt-10">
+              {/* <p className="text-[#cc0000] font-black text-xs tracking-[0.6em] mb-4 ">
+                Mentorship Legacy
+              </p> */}
+              <h2 className="text-5xl md:text-6xl font-black text-[#222222] tracking-tight mb-10 leading-[0.9]">
+                My
+                <span className="text-[#cc0000]"> Blogs</span>
+              </h2>
+              <div className="w-20 h-1 bg-[#cc0000] mt-4 mb-8" />
+            </div>
+          </div>
+          </div>
       {/* Blog Grid Section */}
-      <div className="min-h-screen bg-gray-100 p-6 md:p-12">
+      <div className="min-h-screen  p-6 md:p-12">
         <div className="mx-auto max-w-6xl">
           {isLoading ? (
             <div className="flex justify-center items-center py-20">
-              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#2d368e]"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#cc0000]"></div>
             </div>
           ) : (
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -105,13 +136,13 @@ export default function BlogPage() {
                           "https://via.placeholder.com/400x300?text=Image+Not+Found";
                       }}
                     />
-                    <div className="absolute left-4 top-4 rounded-full bg-[#2d368e] px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider">
+                    <div className="absolute left-4 top-4 rounded-full bg-[#cc0000] px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider">
                       {blog.category}
                     </div>
                   </div>
                   {/* Content Section */}
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="mb-3 line-clamp-2 text-lg font-bold leading-tight text-slate-800 min-h-[3rem]">
+                    <h3 className="mb-3 line-clamp-2 text-lg font-bold leading-tight text-[#222222] min-h-[3rem]">
                       {blog.title}
                     </h3>
 
@@ -121,15 +152,15 @@ export default function BlogPage() {
 
                     <div className="mt-auto flex items-center gap-3 border-t border-gray-100 pt-5">
                       {/* Author Avatar with Initials */}
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1d4ed8] text-xs font-bold text-white shadow-sm">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#cc0000] text-xs font-bold text-white shadow-sm">
                         {getInitials(blog.author)}
                       </div>
 
                       <div className="flex flex-col">
-                        <span className="text-xs font-bold text-slate-800">
+                        <span className="text-[13px] font-bold text-slate-800">
                           {blog.author?.name || "Anonymous"}
                         </span>
-                        <span className="text-[10px] text-gray-400 font-medium">
+                        <span className="text-[12px] text-gray-400 font-medium">
                           {new Date(blog.date).toLocaleDateString("en-US", {
                             month: "short",
                             day: "numeric",
@@ -140,7 +171,7 @@ export default function BlogPage() {
                     </div>
 
                     <Link href={`/my-blogs/${blog.slug}`}>
-                      <button className="mt-6 w-full rounded-lg bg-[#2d368e] py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#1e2563] sm:w-fit sm:px-8">
+                      <button className="mt-6 w-full rounded-lg bg-[#cc0000] py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#cc0000] sm:w-fit sm:px-8">
                         Read Full Blog
                       </button>
                     </Link>
@@ -155,7 +186,7 @@ export default function BlogPage() {
             <div className="mt-12 flex justify-center">
               <button
                 onClick={handleLoadMore}
-                className="rounded-full bg-white border-2 border-[#2d368e] px-10 py-3 text-sm font-bold text-[#2d368e] transition-all hover:bg-[#2d368e] hover:text-white active:scale-95 shadow-sm"
+                className="rounded-full bg-white border-2 border-[#cc0000] px-10 py-3 text-sm font-bold text-[#cc0000] transition-all hover:bg-[#cc0000] hover:text-white active:scale-95 shadow-sm"
               >
                 Load More
               </button>

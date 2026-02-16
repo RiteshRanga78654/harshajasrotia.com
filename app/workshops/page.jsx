@@ -69,7 +69,7 @@ export default function EventsSpeakingPage() {
   return (
     <main className="bg-white min-h-screen selection:bg-[#cc0000] selection:text-white">
       {/* ================= SECTION 1: KEYNOTE SPOTLIGHT (HERO) ================= */}
-      <section className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[70vh] md:h-[83vh] flex items-center justify-center overflow-hidden">
         {/* Cinematic Video/Image Loop Background */}
         <div className="absolute inset-0 z-0 opacity-90">
           <img

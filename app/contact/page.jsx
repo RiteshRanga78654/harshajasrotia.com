@@ -47,7 +47,7 @@ export default function ContactPage() {
   return (
     <main className="bg-white min-h-screen selection:bg-[#cc0000] selection:text-white">
       {/* ================= SECTION 1: EXECUTIVE HERO ================= */}
-      <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[60vh] md:h-[83vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-90">
           <img
             src="/Harshjasrotia.com/Ritesh/Photos/DSC02328.JPG"

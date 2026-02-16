@@ -26,7 +26,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative min-h-[80vh] flex items-center bg-cover bg-center bg-no-repeat transition-all duration-700"
+      className="relative min-h-[83vh] flex items-center bg-cover bg-center bg-no-repeat transition-all duration-700"
       style={{ backgroundImage: `url('${bgImage}')` }}
     >
       {/* Dark Overlay for readability */}

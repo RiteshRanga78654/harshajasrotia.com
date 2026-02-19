@@ -86,11 +86,12 @@ function SidebarItem({ icon, label, open, href, active }) {
   return (
     <Link 
       href={href}
-      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+      className={`flex items-center gap-3  px-4 py-3 rounded-xl transition-all duration-200 ${
         active 
           ? "bg-[#cc0000] text-white shadow-lg" 
           : "hover:bg-gray-200 text-gray-500 hover:text-[#cc0000] "
       }`}
+      style={{ marginLeft: "-15px" }}
     >
       <span className={active ? "text-white" : "text-[#cc0000]"}>{icon}</span>
       {open && <span className="font-medium">{label}</span>}

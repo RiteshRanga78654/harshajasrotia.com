@@ -110,7 +110,7 @@ export default function CompleteBlogDashboard() {
         <h1 className="text-3xl font-black text-slate-800 tracking-tight">Blog Admin</h1>
         <button 
           onClick={() => { setFormData(initialFormState); setEditingId(null); setIsModalOpen(true); }}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-xl font-bold flex items-center gap-2 shadow-lg transition-all"
+          className="bg-[#cc0000] hover:bg-blue-700 text-white px-6 py-2 rounded-xl font-bold flex items-center gap-2 shadow-lg transition-all"
         >
           <Plus size={20} /> Create Post
         </button>
@@ -145,7 +145,7 @@ export default function CompleteBlogDashboard() {
                 </td>
                 <td className="px-6 py-4 text-right">
                   <div className="flex justify-end gap-2">
-                    <button onClick={() => openEdit(blog)} className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg"><Edit3 size={18} /></button>
+                    <button onClick={() => openEdit(blog)} className="p-2 text-slate-400 hover:text-[#cc0000] hover:bg-blue-50 rounded-lg"><Edit3 size={18} /></button>
                     <button onClick={() => deleteBlog(blog.slug)} className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg"><Trash2 size={18} /></button>
                   </div>
                 </td>
@@ -171,18 +171,18 @@ export default function CompleteBlogDashboard() {
                 <div className="space-y-4">
                   <label className="block">
                     <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Main Banner Image</span>
-                    <div className="mt-2 border-2 border-dashed border-slate-200 rounded-2xl p-4 text-center hover:border-blue-400 transition-all cursor-pointer relative group">
+                    <div className="mt-2 border-2 border-dashed border-slate-200 rounded-2xl p-4 text-center hover:border-[#cc0000] transition-all cursor-pointer relative group">
                       {formData.image ? (
                         <img src={`${IMAGE_GET_API}/${formData.image}`} className="w-full h-32 object-cover rounded-xl" alt="Preview" />
                       ) : (
-                        <div className="py-6"><Upload className="mx-auto text-slate-300 mb-2" /><p className="text-[10px] text-slate-400 tracking-tighter uppercase font-bold text-blue-500">Click to Upload</p></div>
+                        <div className="py-6"><Upload className="mx-auto text-slate-300 mb-2" /><p className="text-[10px] text-slate-400 tracking-tighter uppercase font-bold text-[#cc0000]">Click to Upload</p></div>
                       )}
                       <input type="file" className="absolute inset-0 opacity-0 cursor-pointer" onChange={(e) => handleFileUpload(e, 'image')} />
                     </div>
                   </label>
                   <div>
                     <label className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1"><Calendar size={12}/> Post Date</label>
-                    <input type="date" className="w-full mt-1 bg-slate-50 border-none rounded-xl p-3 text-sm focus:ring-2 ring-blue-500 transition-all" value={formData.date} onChange={e => setFormData({...formData, date: e.target.value})} />
+                    <input type="date" className="w-full mt-1 bg-slate-50 border-none rounded-xl p-3 text-sm focus:ring-2 ring-[#cc0000] transition-all" value={formData.date} onChange={e => setFormData({...formData, date: e.target.value})} />
                   </div>
                 </div>
 
@@ -190,20 +190,20 @@ export default function CompleteBlogDashboard() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Short Title</label>
-                      <input className="w-full mt-1 bg-slate-50 border-none rounded-xl p-3 font-bold text-slate-700 focus:ring-2 ring-blue-500" value={formData.title} onChange={e => setFormData({...formData, title: e.target.value, slug: editingId ? formData.slug : e.target.value.toLowerCase().replace(/\s+/g, '-')})} required />
+                      <input className="w-full mt-1 bg-slate-50 border-none rounded-xl p-3 font-bold text-slate-700 focus:ring-2 ring-[#cc0000]" value={formData.title} onChange={e => setFormData({...formData, title: e.target.value, slug: editingId ? formData.slug : e.target.value.toLowerCase().replace(/\s+/g, '-')})} required />
                     </div>
                     <div>
                       <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Category</label>
-                      <input className="w-full mt-1 bg-slate-50 border-none rounded-xl p-3 text-sm font-bold text-blue-600 focus:ring-2 ring-blue-500" value={formData.category} onChange={e => setFormData({...formData, category: e.target.value.toUpperCase()})} />
+                      <input className="w-full mt-1 bg-slate-50 border-none rounded-xl p-3 text-sm font-bold text-[#cc0000] focus:ring-2 ring-[#cc0000]" value={formData.category} onChange={e => setFormData({...formData, category: e.target.value.toUpperCase()})} />
                     </div>
                   </div>
                   <div>
                     <label className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1"><LinkIcon size={12}/> Manual Slug</label>
-                    <input className="w-full mt-1 bg-slate-100 border-none rounded-xl p-3 text-slate-500 font-mono text-xs focus:bg-white focus:ring-2 ring-blue-500" value={formData.slug} onChange={e => setFormData({...formData, slug: e.target.value.toLowerCase().replace(/\s+/g, '-')})} required />
+                    <input className="w-full mt-1 bg-slate-100 border-none rounded-xl p-3 text-slate-500 font-mono text-xs focus:bg-white focus:ring-2 ring-[#cc0000]" value={formData.slug} onChange={e => setFormData({...formData, slug: e.target.value.toLowerCase().replace(/\s+/g, '-')})} required />
                   </div>
                   <div>
                     <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Full Display Title (SEO H1)</label>
-                    <input className="w-full mt-1 bg-slate-50 border-none rounded-xl p-3 text-sm focus:ring-2 ring-blue-500" value={formData.fullTitle} onChange={e => setFormData({...formData, fullTitle: e.target.value})} required />
+                    <input className="w-full mt-1 bg-slate-50 border-none rounded-xl p-3 text-sm focus:ring-2 ring-[#cc0000]" value={formData.fullTitle} onChange={e => setFormData({...formData, fullTitle: e.target.value})} required />
                   </div>
                 </div>
               </div>
@@ -212,17 +212,17 @@ export default function CompleteBlogDashboard() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Excerpt (Card Preview Text)</label>
-                  <textarea className="w-full mt-1 bg-slate-50 border-none rounded-xl p-3 h-24 text-sm focus:ring-2 ring-blue-500" maxLength="200" value={formData.excerpt} onChange={e => setFormData({...formData, excerpt: e.target.value})} required />
+                  <textarea className="w-full mt-1 bg-slate-50 border-none rounded-xl p-3 h-24 text-sm focus:ring-2 ring-[#cc0000]" maxLength="200" value={formData.excerpt} onChange={e => setFormData({...formData, excerpt: e.target.value})} required />
                 </div>
                 <div>
                   <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Description (Meta Tags)</label>
-                  <textarea className="w-full mt-1 bg-slate-50 border-none rounded-xl p-3 h-24 text-sm focus:ring-2 ring-blue-500" value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} required />
+                  <textarea className="w-full mt-1 bg-slate-50 border-none rounded-xl p-3 h-24 text-sm focus:ring-2 ring-[#cc0000]" value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} required />
                 </div>
               </div>
 
               {/* Main Content Body */}
               <div>
-                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 block text-blue-600">Article Content (Markdown or HTML)</label>
+                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 block text-[#cc0000]">Article Content (Markdown or HTML)</label>
                 <textarea 
                   className="w-full bg-slate-50 border-none rounded-2xl p-5 h-64 text-sm font-mono focus:ring-4 ring-blue-50 transition-all shadow-inner" 
                   value={formData.content} 
@@ -235,7 +235,7 @@ export default function CompleteBlogDashboard() {
               {/* Restore Author Details */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="p-6 bg-slate-50 rounded-3xl space-y-4 border border-slate-100">
-                  <h3 className="font-bold text-sm flex items-center gap-2 text-slate-600"><User size={18} className="text-blue-500"/> Author Profile</h3>
+                  <h3 className="font-bold text-sm flex items-center gap-2 text-slate-600"><User size={18} className="text-[#cc0000]"/> Author Profile</h3>
                   <div className="space-y-3">
                     <input placeholder="Author Name" className="w-full bg-white border-none rounded-xl p-3 text-sm shadow-sm" value={formData.author.name} onChange={e => setFormData({...formData, author: {...formData.author, name: e.target.value}})} required />
                     <div className="relative">
@@ -248,8 +248,8 @@ export default function CompleteBlogDashboard() {
                 {/* Restore FAQ Items */}
                 <div className="p-6 bg-slate-50 rounded-3xl space-y-4 border border-slate-100">
                   <div className="flex justify-between items-center">
-                    <h3 className="font-bold text-sm flex items-center gap-2 text-slate-600"><MessageSquare size={18} className="text-blue-500"/> FAQ Section</h3>
-                    <button type="button" onClick={() => setFormData({...formData, faq: [...formData.faq, {q:"", a:""}]})} className="text-[10px] font-black bg-blue-500 text-white px-3 py-1 rounded-full uppercase transition-transform active:scale-95 shadow-md shadow-blue-100">+ Add Question</button>
+                    <h3 className="font-bold text-sm flex items-center gap-2 text-slate-600"><MessageSquare size={18} className="text-[#cc0000]"/> FAQ Section</h3>
+                    <button type="button" onClick={() => setFormData({...formData, faq: [...formData.faq, {q:"", a:""}]})} className="text-[10px] font-black bg-[#cc0000] text-white px-3 py-1 rounded-full uppercase transition-transform active:scale-95 shadow-md shadow-blue-100">+ Add Question</button>
                   </div>
                   <div className="space-y-3 max-h-48 overflow-y-auto pr-2 custom-scrollbar">
                     {formData.faq.map((item, idx) => (
@@ -274,7 +274,7 @@ export default function CompleteBlogDashboard() {
                 </label>
                 <div className="flex gap-4">
                   <button type="button" onClick={closeModal} className="text-slate-400 font-bold px-4 hover:text-slate-600 transition-colors">Discard</button>
-                  <button type="submit" disabled={loading} className="bg-blue-600 text-white px-10 py-3 rounded-2xl font-black shadow-xl shadow-blue-100 hover:scale-[1.02] active:scale-95 transition-all">
+                  <button type="submit" disabled={loading} className="bg-[#cc0000] text-white px-10 py-3 rounded-2xl font-black shadow-xl shadow-blue-100 hover:scale-[1.02] active:scale-95 transition-all">
                     {loading ? 'PROCESSING...' : (editingId ? 'UPDATE POST' : 'PUBLISH POST')}
                   </button>
                 </div>

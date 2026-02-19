@@ -74,7 +74,7 @@ export default function TestimonialsDashboard() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const method = editId ? "PUT" : "POST";
+    const method = editId ? "PATCH" : "POST";
     const url = editId ? `/api/v1/testimonial/${editId}` : "/api/v1/testimonial";
     await fetch(url, {
       method,
@@ -134,7 +134,7 @@ export default function TestimonialsDashboard() {
               {/* Status Badge */}
               <div className="absolute top-6 right-6">
                 {item.publish ? (
-                  <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest bg-green-100 text-green-600 px-3 py-1 rounded-full">
+                  <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest bg-[#cc0000] text-white px-3 py-1 rounded-full">
                     <CheckCircle size={10} /> Live
                   </span>
                 ) : (
@@ -148,7 +148,7 @@ export default function TestimonialsDashboard() {
                 <div className="relative">
                   <img
                     src={`${IMAGE_GET_API}/${item.image}`}
-                    className="w-16 h-16 rounded-2xl object-cover ring-4 ring-[#cc0000]/20 shadow-md"
+                    className="w-22 h-22 rounded-2xl object-cover ring-4 ring-white shadow-2xl"
                     alt={item.name}
                   />
                   <div className="absolute -bottom-1 -right-1 bg-[#cc0000] text-white text-[10px] px-2 py-0.5 rounded-md font-bold uppercase">
@@ -167,22 +167,22 @@ export default function TestimonialsDashboard() {
                 ))}
               </div>
 
-              <p className="text-gray-600 italic leading-relaxed mb-6 line-clamp-4 flex-1">
+              <p className="text-gray-600 italic leading-relaxed mb-5 line-clamp-4 flex-1">
                 "{item.review}"
               </p>
 
-              <div className="flex justify-between items-center pt-6 border-t border-gray-200">
+              <div className="flex justify-between items-center pt-4 border-t border-[#cc0000]/20">
                 <div className="flex gap-4">
                   <button onClick={() => openModal(item)} className="p-2 text-gray-400 hover:text-blue-600 transition-colors">
-                    <Edit2 size={18} />
+                    <Edit2 size={18} className="text-[#cc0000]" />
                   </button>
                   <button onClick={() => handleDelete(item._id)} className="p-2 text-gray-400 hover:text-[#cc0000] transition-colors">
-                    <Trash2 size={18} />
+                    <Trash2 size={18} className="text-[#cc0000]" />
                   </button>
                 </div>
                 {item.googlelink && (
                   <a href={item.googlelink} target="_blank" className="text-gray-400 hover:text-gray-800 transition-colors">
-                    <ExternalLink size={18} />
+                    <ExternalLink size={18} className="text-[#cc0000]" />
                   </a>
                 )}
               </div>
